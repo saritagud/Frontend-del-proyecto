@@ -1,9 +1,10 @@
-import { Nav } from "./Nav"
-import { Footer } from './Navfooter';
+import Nav  from "./nav"
+import Footer from './footer';
+import { useState } from "react";
 
 
 
-export function Chat() {
+function Chat() {
 
     return (
         <div>
@@ -34,3 +35,5 @@ export function Chat() {
         </div>
     )
 }
+
+export default Chat;

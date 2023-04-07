@@ -12,11 +12,11 @@ function Nav() {
 
           {isOpen && (
           <ul className="origin-top-right absolute right-0 mt-2 w-full h-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none text-right ">
-            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./inicio.jsx"><li>Inicio</li></a>
-            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./chat.jsx"><li>ChatUVM</li></a>
-            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./personalizacion.jsx"><li>Personalizacion</li></a>
-            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./login.jsx"><li>Iniciar Sesión</li></a>
-            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./register.jsx"><li>Registrarse</li></a>
+            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./inicio"><li>Inicio</li></a>
+            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./chat"><li>ChatUVM</li></a>
+            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./personalizacion"><li>Personalizacion</li></a>
+            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./login"><li>Iniciar Sesión</li></a>
+            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./registro"><li>Registrarse</li></a>
           </ul>
           )}
         </nav>
