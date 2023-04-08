@@ -1,36 +1,77 @@
-import { Nav } from "./Nav"
-import { Footer } from './Navfooter';
+import React from "react";
+import Chatbot from "react-chatbot-kit";
+
+import config from "./Chatbot/config";
+import MessageParser from "./Chatbot/MessageParser";
+import ActionProvider from "./Chatbot/ActionProvider";
+
+function Chat() {
+  return (
+    <div className="App">
+      <Chatbot
+        config={config}
+        messageParser={MessageParser}
+        actionProvider={ActionProvider}
+      />
+    </div>
+  );
+}
+
+export default Chat;
 
 
 
-export function Chat() {
 
+
+
+
+
+
+
+
+
+
+/* import Nav  from "./nav"
+import Footer from './footer';
+import {FaArrowCircleRight} from "react-icons/fa";
+import React, { useState, useRef } from 'react';
+
+
+
+function Chat() {
+    const inputRef = useRef()
+
+    function funcionamiento(){
+        const input = inputRef.current;
+        let respuesta = React.createElement('p')
+        respuesta.props.content('')
+
+        let pregunta = React.createElement('p');
+        pregunta.props.content(input.value)
+
+        const contenedor = React.createElement('div');
+        contenedor.props.content(pregunta);
+        contenedor.props.content(respuesta)
+    }
+    
     return (
         <div>
             <Nav/>
-                <section>
-                    <h1>ChatUVM</h1>
+                <section className="h-screen">
+                    <h1 className=" font-signikaNegative text-center text-3xl">ChatUVM</h1>
 
-                    <div>
-                        <ul>
+                    <div className="h-screen border-2 border-black">
 
-                        </ul>
                     </div>
 
-                    <div>
-                        <ul>
-
-                        </ul>
-                    </div>
-
-
-
-                    <div>
-                        <input type="text"></input>
-                        <button></button>
-                    </div>
+                    <form className=" bg-verdeOscuro p-3" onSubmit={funcionamiento}>
+                        <input ref={inputRef} className="w-80  border-2 border-black rounded-xl ml-4 h-10 bg-white p-2 font-mono" type="text"></input>
+                        <button className="cursor-pointer absolute right-9 mt-2 text-2xl"><FaArrowCircleRight/></button>
+                    </form>
                 </section>
-            <Footer/>
+            
         </div>
     )
 }
+
+export default Chat; */

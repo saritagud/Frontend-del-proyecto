@@ -1,10 +1,10 @@
 
 function Registro(){
-    const estiloLabel = ("font-Urbanist text-xl text-left w-full ")
-    const estiloInput =("border-2 border-grisClaro h-11 text-left w-full rounded-2xl")
+    const estiloLabel = ("font-Urbanist text-xl text-left w-full mt-3 ")
+    const estiloInput =("border-2 border-grisClaro h-12 text-left w-full rounded-xl mt-3 p-3 font-mono")
     return(
-        <div className="flex flex-col  items-center">
-            <h1 className="font-signikaNegative text-5xl mt-20">Registrate</h1>
+        <div className="flex flex-col items-center m-14">
+            <h1 className="font-signikaNegative text-5xl ">Registrate</h1>
 
             <form className="flex flex-col items-center bg-verdeClaro h-full w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 m-5">
                 <label className={estiloLabel}>Nombre y Apellido</label>
