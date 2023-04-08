@@ -8,7 +8,7 @@ function LandingPage () {
         <Nav/>
             <section className="bg-principal p-3 bg-cover bg-fixed">
             <h1 className="text-white font-signikaNegative text-5xl flex pt-96 px-3">ChatUVM</h1>
-            <p className="text-white font-Urbanist text-2xl flex pt-5 px-3">El chatUVM es una herramienta diseñada pensando en los estudiantes. Resuelve cualquier dudas en solo minutos! 
+            <p className="text-white font-Urbanist text-xl flex pt-5 px-3">El chatUVM es una herramienta diseñada pensando en los estudiantes. Resuelve cualquier dudas en solo minutos! 
             Creado por los mejores estudiantes de nuestra universidad.</p>
             <a href="./chat"><button className="bg-verdeManzana p-4 w-72 flex justify-center rounded-3xl m-3 text-white font-Urbanist text-xl cursor-pointer hover:bg-verdeOscuro ">
             Continuar a ChatUVM

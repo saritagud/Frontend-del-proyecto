@@ -1,6 +1,6 @@
 function Login(){
-    const estiloLabel = ("font-Urbanist text-xl text-left w-full ")
-    const estiloInput =("border-2 border-grisClaro h-11 text-left w-full rounded-2xl")
+    const estiloLabel = ("font-Urbanist text-xl text-left w-full m-3")
+    const estiloInput =("border-2 border-grisClaro h-11 text-left w-full rounded-2xl ")
     return(
         
         <div className="flex flex-col  items-center">
@@ -12,8 +12,10 @@ function Login(){
                 <label className={estiloLabel}>Contraseña</label>
                 <input className={estiloInput} type="password"></input>
                 <button className="bg-white border-2 border-grisClaro rounded-2xl font-Urbanist my-7  text-xl p-3 w-40 font-bold">Iniciar Sesión</button>
-                <p className="font-Urbanist ">¿No tienes una cuenta? <a className="font-bold hover:text-white" href="./register.jsx">¡Regístrate!</a> </p>
+                <p className="font-Urbanist ">¿No tienes una cuenta? <a className="font-bold hover:text-white" href="./registro">¡Regístrate!</a> </p>
             </form>
+
+            
         </div>
     );
 }
