@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&family=Urbanist:wght@200&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+}
+
+.react-chatbot-kit-chat-header{
+    font-size: 30px;
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Signika Negative';
+}
+
+.react-chatbot-kit-chat-bot-message{
+    background-color: #D0E6B5;
+    border: 1px solid #A7A7A7;
+    border-radius: 0px 16px 16px 30px;
+    height: max-content;
+    width: 80%;
+    margin: 10px;
+    font-family: 'Urbanist';
+    padding: 10px 10px 10px 15px;
+}
+
+.react-chatbot-kit-chat-input-container{
+    background-color: #89A64B;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+
+}
+
+.react-chatbot-kit-chat-bot-message-container{
+    margin: 20px;
+    display: flex;
+}
+
+.react-chatbot-kit-chat-input-container{
+    position: static;
+
+}
+.react-chatbot-kit-chat-input{
+    border-radius: 10px;
+    border: 1px solid #A7A7A7;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.react-chatbot-kit-user-chat-message{
+        background-color: #D0E6B5;
+        border: 1px solid #A7A7A7;
+        border-radius: 16px 0px 30px 16px;
+        height: max-content;
+        width: max-content;
+        margin: 10px;
+        text-align: right;
+        padding: 10px;
+        font-family: 'Urbanist';
+        display: flex;
+
+}
+
+.react-chatbot-kit-user-avatar-icon{
+    width: 30px;
+
+}
+
+.react-chatbot-kit-user-chat-message-container{
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.react-chatbot-kit-chat-btn-send{
+    width: 18px;
+    color: black;
+    margin-left: -30px;
+    cursor: pointer;
+}
+
