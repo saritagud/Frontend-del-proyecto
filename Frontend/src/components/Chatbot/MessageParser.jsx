@@ -2,7 +2,10 @@ import React from 'react';
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
-    console.log(message);
+  if(message.includes('UVM')){
+    console.log(message)
+    actions.handleHello(message)
+  }
   };
 
   return (
