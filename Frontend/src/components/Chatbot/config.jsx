@@ -13,7 +13,7 @@ fetch("http://localhost:3000/respuesta", {
 
 const config = {
   botName: "MomoyBot",
-  initialMessages: [createChatBotMessage("ola, soy ChatUVM")],
+  initialMessages: [createChatBotMessage("Hola, soy MomoyBot")],
 };
 
 export default config;

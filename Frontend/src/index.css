@@ -3,16 +3,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-      --color-neutral-900: theme('colors.gray.900');
-  }
-}
-
-.theme-1 {
-  --neutralBg: theme('colors.white');
-  --onNeutralBg: var(--color-neutral-900);
-  --verdePrimario: theme('colors.verdeClaro');
-  --verdeSecundario: theme('colors.verdeOscuro');
-  --verdeComplementario: theme('colors.verdeManzana');
-}
