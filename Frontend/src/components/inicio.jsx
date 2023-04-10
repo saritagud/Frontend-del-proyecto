@@ -1,6 +1,16 @@
 import {FaCheckCircle, FaChalkboardTeacher, FaAngleRight, FaBook} from "react-icons/fa";
 import Nav from "./nav";
 import Footer from "./footer";
+import {useEffect, useState} from "react";
+
+useEffect(() => {
+    const temaActual = localStorage.getItem(theme)
+    if (temaActual !== null) {
+        setValue(temaActual)
+    } else {
+        setValue(tema[0])
+    }
+}, [theme, setValue])
 
 function LandingPage () {
     return(
@@ -11,6 +21,7 @@ function LandingPage () {
             <p className="text-white font-Urbanist text-xl flex pt-5 px-3">El chatUVM es una herramienta diseñada pensando en los estudiantes. Resuelve cualquier dudas en solo minutos! 
             Creado por los mejores estudiantes de nuestra universidad.</p>
             <a href="./chat"><button className="bg-verdeManzana p-4 w-72 flex justify-center rounded-3xl m-3 text-white font-Urbanist text-xl cursor-pointer hover:bg-verdeOscuro ">
+            <a href="./chat"><button className="bg-prymaryBg p-4 w-72 flex justify-center rounded-3xl m-3 text-white font-Urbanist text-xl cursor-pointer hover:bg-verdeOscuro ">
             Continuar a ChatUVM
         <FaAngleRight/>
         </button></a>
