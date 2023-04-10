@@ -3,12 +3,11 @@
 *{
     padding: 0;
     margin: 0;
-    min-height: 100%;
 }
 
 .react-chatbot-kit-chat-header{
     font-size: 30px;
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: center;
     font-family: 'Signika Negative';
 }
@@ -22,6 +21,7 @@
     margin: 10px;
     font-family: 'Urbanist';
     padding: 10px 10px 10px 15px;
+    font-weight: bold;
 }
 
 .react-chatbot-kit-chat-input-container{
@@ -38,7 +38,8 @@
 }
 
 .react-chatbot-kit-chat-input-container{
-    position: static;
+    position: fixed;
+    bottom: 0;
 
 }
 .react-chatbot-kit-chat-input{
@@ -61,6 +62,7 @@
         padding: 10px;
         font-family: 'Urbanist';
         display: flex;
+        font-weight: bold;
 
 }
 

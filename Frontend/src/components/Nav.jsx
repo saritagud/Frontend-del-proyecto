@@ -11,13 +11,13 @@ function Nav() {
           <FaBars className="text-3xl h-full w-full cursor-pointer text-verdeManzana " onClick={() => setIsOpen(!isOpen)}/>
 
           {isOpen && (
-          <ul className="origin-top-right absolute right-0 mt-2 w-screen h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none text-right">
-            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./landingPage"><li>Inicio</li></a>
+          <ul className="origin-top-right absolute right-0 mt-2 w-full h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none text-right">
             <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./chat"><li>ChatUVM</li></a>
             <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./personalizacion"><li>Personalizacion</li></a>
             <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./login"><li>Iniciar Sesión</li></a>
             <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./registro"><li>Registrarse</li></a>
           </ul>
+          
           )}
         </nav>
       </header>
