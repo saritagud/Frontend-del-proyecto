@@ -9,12 +9,6 @@ module.exports = {
         verdeOscuro: "#89A64B",
         verdeAmarillo: "#E2F2A7",
         grisClaro: "#A7A7A7",
-
-        verdePrimario: 'var(--verdePrimario)',
-        verdeSecundario: 'var(--verdeSecundario)',
-        verdeComplementario: 'var(--verdeComplementario)',
-        prymaryBg: 'var(--primaryBg)',
-        neutralBg: 'var(--neutralBg)',
       },
       fontFamily: {
         signikaNegative: ["Signika Negative", "sans-serif"],
