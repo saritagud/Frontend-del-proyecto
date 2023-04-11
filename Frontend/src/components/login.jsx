@@ -1,34 +1,70 @@
-import {FaArrowLeft} from 'react-icons/fa'
-import {FcGoogle} from 'react-icons/fc'
-function Login(){
-    const estiloLabel = ("font-Urbanist text-xl text-left w-full m-3 font-bold")
-    const estiloInput =("border-2 border-verdeOscuroFuerte h-14 text-left w-full rounded-2xl p-3 font-Urbanist text-xl")
-    return(
+import { FaArrowLeft } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { useState } from "react";
+
+function Login() {
+    const estiloLabel = "font-Urbanist text-xl text-left w-full m-3 font-bold";
+    const estiloInput = "border-2 border-verdeOscuroFuerte h-14 text-left w-full rounded-2xl p-3 font-Urbanist text-xl";
+    const [correoElectronico, setCorreoElectronico] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const datosUsuario = {
+            correo: correoElectronico,
+            password: password,
+        };
+        console.log(datosUsuario);
+        fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datosUsuario),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+    return (
         <div>
-        <a href="index"> <FaArrowLeft  className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7"/> </a>
-        
-        <section className="flex flex-col  items-center">
-            <img className='w-44 ' src="/src/assets/logoBot.png" />
-            <h1 className="font-signikaNegative text-5xl m-5">Inicia Sesión </h1>
+            <a href="index">
+                {" "}
+                <FaArrowLeft className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7" />{" "}
+            </a>
 
-            <form className="flex flex-col items-center bg-verdeClaro h-auto w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl">
-                <div className='w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2'></div>
-                <label className={estiloLabel}>Correo Electrónico </label>
-                <input className={estiloInput} type="email"></input>
-                <label className={estiloLabel}>Contraseña</label>
-                <input className={estiloInput} type="password"></input>
-                <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold ">Iniciar Sesión</button>
-                
-                <div className='flex justify-between items-center mt-5'>
-                <div className='h-1 w-32 bg-verdeOscuroFuerte '></div> <p className='m-2 text-xl text-verdeOscuroFuerte'>o</p> <div className='h-1 w-32 bg-verdeOscuroFuerte'></div>
-                </div>
-                <button className='w-64 bg-white p-4 border-2 border-black rounded-xl m-5 flex justify-center items-center font-Urbanist font-bold'><FcGoogle className='mr-2 text-xl'/>Iniciar Sesión con Google</button>
-                <p className="font-Urbanist ">¿No tienes una cuenta? <a className="font-bold hover:text-white" href="./registro">¡Regístrate!</a> </p>
+            <section className="flex flex-col  items-center">
+                <img className="w-44 " src="/src/assets/logoBot.png" />
+                <h1 className="font-signikaNegative text-5xl m-5">Inicia Sesión </h1>
 
-            </form>
+                <form className="flex flex-col items-center bg-verdeClaro h-auto w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl" onSubmit={handleSubmit}>
+                    <div className="w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
+                    <label className={estiloLabel}>Correo Electrónico </label>
+                    <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value)} name="correoElectronico"></input>
+                    <label className={estiloLabel}>Contraseña</label>
+                    <input className={estiloInput} type="password" value={password} onChange={(e) => setPassword(e.target.value)} name="contrasena"></input>
+                    <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold ">Iniciar Sesión</button>
 
-            
-        </section>
+                    <div className="flex justify-between items-center mt-5">
+                        <div className="h-1 w-32 bg-verdeOscuroFuerte "></div> <p className="m-2 text-xl text-verdeOscuroFuerte">o</p> <div className="h-1 w-32 bg-verdeOscuroFuerte"></div>
+                    </div>
+                    <button className="w-64 bg-white p-4 border-2 border-black rounded-xl m-5 flex justify-center items-center font-Urbanist font-bold">
+                        <FcGoogle className="mr-2 text-xl" />
+                        Iniciar Sesión con Google
+                    </button>
+                    <p className="font-Urbanist ">
+                        ¿No tienes una cuenta?{" "}
+                        <a className="font-bold hover:text-white" href="./registro">
+                            ¡Regístrate!
+                        </a>{" "}
+                    </p>
+                </form>
+            </section>
         </div>
     );
 }
