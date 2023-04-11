@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative&family=Urbanist:wght@200&display=swap');
 
-*{
+body{
     padding: 0;
     margin: 0;
+    height: 100%;
 }
+
+
 
 .react-chatbot-kit-chat-header{
     font-size: 30px;
     margin-top: 10px;
     text-align: center;
     font-family: 'Signika Negative';
+    
 }
 
 .react-chatbot-kit-chat-bot-message{
@@ -28,19 +32,15 @@
     background-color: #89A64B;
     padding: 20px;
     width: 100%;
-    position: fixed;
-
 }
 
 .react-chatbot-kit-chat-bot-message-container{
     margin: 20px;
     display: flex;
+    height: 100%;
 }
 
 .react-chatbot-kit-chat-input-container{
-    position: fixed;
-    bottom: 0;
-
 }
 .react-chatbot-kit-chat-input{
     border-radius: 10px;
@@ -48,7 +48,6 @@
     height: 40px;
     width: 100%;
     padding: 10px;
-
 }
 
 .react-chatbot-kit-user-chat-message{
@@ -83,4 +82,16 @@
     margin-left: -30px;
     cursor: pointer;
 }
+
+.react-chatbot-kit-chat-bot-avatar-letter{
+    background-color: #89A64B;
+    padding: 10px;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    font-family: 'Signika Negative';
+}
+
+
 

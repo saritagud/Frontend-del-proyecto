@@ -9,6 +9,7 @@ module.exports = {
         verdeOscuro: "#89A64B",
         verdeAmarillo: "#E2F2A7",
         grisClaro: "#A7A7A7",
+        verdeOscuroFuerte: "#0B751C"
       },
       fontFamily: {
         signikaNegative: ["Signika Negative", "sans-serif"],

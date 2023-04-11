@@ -4,12 +4,14 @@ import './Chatbot/chat.css'
 import config from "./Chatbot/config";
 import MessageParser from "./Chatbot/MessageParser";
 import ActionProvider from "./Chatbot/ActionProvider";
-import Nav from "./nav";
+import Nav from "./Nav";
 
 function Chat() {
   return (
     <div className="App">
+    
     <Nav/>
+    
       <Chatbot
         config={config}
         messageParser={MessageParser}

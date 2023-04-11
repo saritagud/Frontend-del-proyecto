@@ -1,5 +1,5 @@
 import {FaCheckCircle, FaChalkboardTeacher, FaAngleRight, FaBook} from "react-icons/fa";
-import Nav from "./nav";
+import Nav from "./Nav";
 import Carrusel from "./carrusel";
 import Footer from "./footer";
 import {useEffect, useState} from "react";
@@ -19,20 +19,20 @@ function LandingPage () {
         </button></a>
         </section>
 
-        <section className="bg-verdeClaro p-5">
-            <h1 className="font-signikaNegative text-3xl">¿Por qué usarlo?</h1>
+        <section className=" p-5">
+            <h1 className="font-signikaNegative shadow- text-4xl mt-5 mb-5 ">¿Por qué usarlo?</h1>
         
-            <div className="flex flex-col items-center w-full">
+            <div className="flex flex-col items-center w-full mb-5">
         
-                <div className="flex font-Urbanist text-lg my-4 font-bold items-center ">
-                    <FaCheckCircle className="text-5xl w-64"/>
+                <div className="flex font-Urbanist text-lg  my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-verdeManzana">
+                    <FaCheckCircle className="text-5xl  w-64"/>
                     <p>¡Rapidez a la hora de obtener respuestas! Con nuestro chatUVM solo estás a un clic de distancia para resolver tus dudas.</p>
                 </div>
-                <div className="flex font-Urbanist text-lg my-2 font-bold items-center ">
-                    <FaChalkboardTeacher className="text-5xl  w-full"/>
+                <div className="flex font-Urbanist text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-verdeManzana">
+                    <FaChalkboardTeacher className="text-5xl mr-3 w-full"/>
                     <p>¿Tienes dudas con respecto a tu carrera? ¿Deseas conocer algo sobre la universidad? Entonces, ¿qué estás esperando para hacer tu pregunta a chatUVM?</p>
                 </div>
-                <div className="flex font-Urbanist text-lg my-2 font-bold items-center">
+                <div className="flex font-Urbanist text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-verdeManzana">
                     <FaBook className="text-5xl w-64"/>
                     <p>¡Comodidad y eficiencia! ChatUVM te permite obtener respuestas en cualquier momento y desde cualquier lugar</p>
                 </div>
@@ -40,18 +40,11 @@ function LandingPage () {
             </div>
                 
         </section>
-
-        <section className="flex flex-col items-center py-6">
-        <Carrusel/>
-
-            <h1 className="font-signikaNegative text-3xl w-full  px-5">¿Cómo usarlo?</h1>
-            <p className="text-3xl font-bold font-signikaNegative text-left w-72 mt-5">Paso 1:</p>
-            <p className="bg-verdeManzana m-3 mx-10 py-5 px-4 h-30 w-70 text-lg font-bold font-Urbanist rounded-lg">Haz clic en el botón principal de la web</p>
-            <p className="text-3xl font-bold font-signikaNegative text-left w-72 mt-5">Paso 2:</p>
-            <p className="bg-verdeManzana m-3 mx-10 py-5 px-4 h-30 w-70 text-lg font-bold font-Urbanist rounded-lg">Inicia sesión con tu correo y contraseña de chatUVM</p>
-            <p className="text-3xl font-bold font-signikaNegative text-left w-72 mt-5">Paso 3:</p>
-            <p className="bg-verdeManzana m-3 mx-10 py-5 px-4 h-30 w-70 text-lg font-bold font-Urbanist rounded-lg">¡Escribe cualquier pregunta al chat y listo! Estarías utilizando de forma correcta nuestro chatUVM. </p>
-        </section>
+        <div> 
+            <p className="font-signikaNegative text-center text-3xl p-7">¡Tener respuestas a tus preguntas nunca fue tan fácil!</p>
+            <Carrusel/>
+        </div>
+        
         <Footer/>
         </div>
     )        
