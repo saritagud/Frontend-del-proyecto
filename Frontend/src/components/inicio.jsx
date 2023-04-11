@@ -1,5 +1,6 @@
 import {FaCheckCircle, FaChalkboardTeacher, FaAngleRight, FaBook} from "react-icons/fa";
 import Nav from "./nav";
+import Carrusel from "./carrusel";
 import Footer from "./footer";
 import {useEffect, useState} from "react";
 
@@ -16,7 +17,6 @@ function LandingPage () {
             Continuar a ChatUVM
         <FaAngleRight/>
         </button></a>
-        
         </section>
 
         <section className="bg-verdeClaro p-5">
@@ -42,8 +42,9 @@ function LandingPage () {
         </section>
 
         <section className="flex flex-col items-center py-6">
-            <h1 className="font-signikaNegative text-3xl w-full  px-5">¿Cómo usarlo?</h1>
+        <Carrusel/>
 
+            <h1 className="font-signikaNegative text-3xl w-full  px-5">¿Cómo usarlo?</h1>
             <p className="text-3xl font-bold font-signikaNegative text-left w-72 mt-5">Paso 1:</p>
             <p className="bg-verdeManzana m-3 mx-10 py-5 px-4 h-30 w-70 text-lg font-bold font-Urbanist rounded-lg">Haz clic en el botón principal de la web</p>
             <p className="text-3xl font-bold font-signikaNegative text-left w-72 mt-5">Paso 2:</p>
@@ -51,7 +52,6 @@ function LandingPage () {
             <p className="text-3xl font-bold font-signikaNegative text-left w-72 mt-5">Paso 3:</p>
             <p className="bg-verdeManzana m-3 mx-10 py-5 px-4 h-30 w-70 text-lg font-bold font-Urbanist rounded-lg">¡Escribe cualquier pregunta al chat y listo! Estarías utilizando de forma correcta nuestro chatUVM. </p>
         </section>
-
         <Footer/>
         </div>
     )        
