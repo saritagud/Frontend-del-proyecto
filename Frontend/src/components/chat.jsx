@@ -12,7 +12,6 @@ function Chat() {
     <div className="">
     
     <Nav/>
-    
       <Chatbot
         config={config}
         messageParser={MessageParser}

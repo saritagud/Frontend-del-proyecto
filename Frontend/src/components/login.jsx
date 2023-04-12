@@ -11,10 +11,9 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        let correo = correoElectronico.trim();
-        let contrasena = password.trim();
-        if (!correo || !contrasena) {
-            alert("Por favor, completa todos los campos.")
+        const regexLength = 5;
+        if(password.length < regexLength ){
+            alert('Ingrese datos validos')
 
             const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
                 if (!password || !regexPassword.test(password)) {
@@ -35,10 +34,10 @@ function Login() {
             console.log(datosUsuario);
             fetch("http://localhost:3000/login", {
                 method: "POST",
+                body: JSON.stringify(datosUsuario),
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(datosUsuario),
             })
                 .then((response) => response.json())
                 .then((data) => {

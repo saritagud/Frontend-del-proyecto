@@ -3,8 +3,10 @@ import React from 'react';
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleHello = (message) => {
 
-        if(!message.trim()){
+        const messageLength = 10; 
+        if(message.length < messageLength){
             alert('Ingrese su pregunta');
+            
         }else{
             let e={
                 pregunta: message

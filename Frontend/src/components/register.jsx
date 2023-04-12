@@ -13,58 +13,53 @@ function Registro() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        let correo = correoElectronico.trim();
-            let nombre = username.trim();
-            let contrasena = password.trim();
-            let confirmacion = confirmarPassword.trim();
-                if (!correo || !nombre || !contrasena || !confirmacion) {
-            alert("Por favor, completa todos los campos.")
-                    return;
-        }
+        const regexLength = 5;
+            if(username.length < regexLength && password.length < regexLength && confirmarPassword.length < regexLength){
+                alert('Ingrese datos validos')
 
-        if (password !== confirmarPassword) {
-            alert("La contraseña y la confirmación de la contraseña no coinciden.");
-
-            const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-                if (!password || !regexPassword.test(password)) {
-                alert("La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.");
-                return;
+                if (password !== confirmarPassword) {
+                    alert("La contraseña y la confirmación de la contraseña no coinciden.")
+                }
+                    const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+                        if (!password || !regexPassword.test(password)) {
+                        alert("La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.");
+                        return;
+                    }
+                    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!correoElectronico || !regexEmail.test(correoElectronico)) {
+                        alert("Por favor ingresa un correo electrónico válido.");
+                        return;
+                    }
+            
+                    const regexUsername = /^[a-zA-Z0-6]+$/;
+                        if (!username || !regexUsername.test(username)) {
+                        alert("Por favor ingresa un nombre de usuario válido (sólo letras y números).");
+                        return;
+                    }
+                
+                } else {
+                    const datosUsuario = {
+                        correo: correoElectronico,
+                        username: username,
+                        password: password,
+                    };
+                    console.log(datosUsuario);
+                    fetch("http://localhost:3000/registrar_usuario", {
+                        method: "POST",
+                        body: JSON.stringify(datosUsuario),
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
             }
-            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!correoElectronico || !regexEmail.test(correoElectronico)) {
-                alert("Por favor ingresa un correo electrónico válido.");
-                return;
-            }
-    
-            const regexUsername = /^[a-zA-Z0-9]+$/;
-                if (!username || !regexUsername.test(username)) {
-                alert("Por favor ingresa un nombre de usuario válido (sólo letras y números).");
-                return;
-            }
-
-        } else {
-            const datosUsuario = {
-                correo: correoElectronico,
-                username: username,
-                password: password,
-            };
-            console.log(datosUsuario);
-            fetch("http://localhost:3000/registrar_usuario", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(datosUsuario),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        }
-    };
+    }          
     return (
         <div>
             <a href="/">
