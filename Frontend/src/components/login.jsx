@@ -4,36 +4,56 @@ import { useState } from "react";
 
 function Login() {
     const estiloLabel = "font-Urbanist text-xl text-left w-full m-3 font-bold";
-    const estiloInput = "border-2 border-verdeOscuroFuerte h-14 text-left w-full rounded-2xl p-3 font-Urbanist text-xl";
+    const estiloInput = "border-2 border-verdeOscuroFuerte h-14 text-left w-full rounded-2xl p-3 font-Urbanist text-xl font-bold";
     const [correoElectronico, setCorreoElectronico] = useState("");
     const [password, setPassword] = useState("");
 
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        const datosUsuario = {
-            correo: correoElectronico,
-            password: password,
-        };
-        console.log(datosUsuario);
-        fetch("http://localhost:3000/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(datosUsuario),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
+        let correo = correoElectronico.trim();
+        let contrasena = password.trim();
+        if (!correo || !contrasena) {
+            alert("Por favor, completa todos los campos.")
+
+            const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+                if (!password || !regexPassword.test(password)) {
+                alert("La contraseña debe contener al menos 6 caracteres, una letra mayúscula, una letra minúscula y un número.");
+                return;
+            }
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!correoElectronico || !regexEmail.test(correoElectronico)) {
+                alert("Por favor ingresa un correo electrónico válido.");
+                return;
+            }
+            
+        }else{
+            const datosUsuario = {
+                correo: correoElectronico,
+                password: password,
+            };
+            console.log(datosUsuario);
+            fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(datosUsuario),
             })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        };
+    }
+        
 
     return (
         <div>
-            <a href="index">
+            <a href="/">
                 {" "}
                 <FaArrowLeft className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7" />{" "}
             </a>
@@ -45,9 +65,9 @@ function Login() {
                 <form className="flex flex-col items-center bg-verdeClaro h-auto w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl" onSubmit={handleSubmit}>
                     <div className="w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
                     <label className={estiloLabel}>Correo Electrónico </label>
-                    <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value)} name="correoElectronico"></input>
+                    <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
                     <label className={estiloLabel}>Contraseña</label>
-                    <input className={estiloInput} type="password" value={password} onChange={(e) => setPassword(e.target.value)} name="contrasena"></input>
+                    <input className={estiloInput} type="password" value={password} onChange={(e) => setPassword(e.target.value.trim())} name="contrasena"></input>
                     <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold ">Iniciar Sesión</button>
 
                     <div className="flex justify-between items-center mt-5">

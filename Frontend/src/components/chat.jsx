@@ -6,9 +6,10 @@ import MessageParser from "./Chatbot/MessageParser";
 import ActionProvider from "./Chatbot/ActionProvider";
 import Nav from "./Nav";
 
+
 function Chat() {
   return (
-    <div className="App">
+    <div className="">
     
     <Nav/>
     

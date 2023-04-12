@@ -6,9 +6,9 @@ import Chat from "./components/chat";
 
 function App() {
   return (
-    <div >
+    <div className="min-h-screen" >
       <Routes>
-            <Route path="/index" element={<LandingPage />} />
+            <Route index element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />}></Route>
             <Route path="/chat" element={<Chat />} />

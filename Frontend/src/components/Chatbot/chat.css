@@ -37,10 +37,14 @@ body{
 .react-chatbot-kit-chat-bot-message-container{
     margin: 20px;
     display: flex;
-    height: 100%;
 }
 
 .react-chatbot-kit-chat-input-container{
+    position: fixed;
+    bottom: 0;
+}
+.react-chatbot-kit-chat-container{
+    margin-bottom: 50px;
 }
 .react-chatbot-kit-chat-input{
     border-radius: 10px;
