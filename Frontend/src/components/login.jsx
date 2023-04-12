@@ -8,15 +8,14 @@ function Login() {
     const [correoElectronico, setCorreoElectronico] = useState("");
     const [password, setPassword] = useState("");
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
         const regexLength = 5;
-        if(password.length < regexLength ){
-            alert('Ingrese datos validos')
+        if (password.length < regexLength) {
+            alert("Ingrese datos validos");
 
             const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
-                if (!password || !regexPassword.test(password)) {
+            if (!password || !regexPassword.test(password)) {
                 alert("La contraseña debe contener al menos 6 caracteres, una letra mayúscula, una letra minúscula y un número.");
                 return;
             }
@@ -25,8 +24,7 @@ function Login() {
                 alert("Por favor ingresa un correo electrónico válido.");
                 return;
             }
-            
-        }else{
+        } else {
             const datosUsuario = {
                 correo: correoElectronico,
                 password: password,
@@ -34,21 +32,21 @@ function Login() {
             console.log(datosUsuario);
             fetch("http://localhost:3000/login", {
                 method: "POST",
-                body: JSON.stringify(datosUsuario),
                 headers: {
                     "Content-Type": "application/json",
                 },
+                body: JSON.stringify(datosUsuario),
             })
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
+                    document.cookie = `token=${data.token}`;
                 })
                 .catch((err) => {
                     console.log(err);
                 });
-        };
-    }
-        
+        }
+    };
 
     return (
         <div>
