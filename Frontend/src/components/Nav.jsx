@@ -21,7 +21,7 @@ function Nav() {
     };
   return (
     <div className="">
-      <header className="bg-white h-20 flex items-center justify-between px-5 w-full ">
+      <header className="bg-white h-20 flex items-center justify-between px-5 w-screen ">
           <img className='w-16' src="/src/assets/robotBot.png" />
         <nav>
           <FaBars className="text-3xl h-full w-full cursor-pointer text-verdeManzana " onClick={() => setIsOpen(!isOpen)}/>
