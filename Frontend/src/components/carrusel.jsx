@@ -57,7 +57,7 @@ function Carrusel() {
           <div
             key={slideIndex}
             onClick={() => imagen(slideIndex)}
-            className='text-2xl cursor-pointer'
+            className='text-2xl cursor-pointer text-textColor'
           >
             <RxDotFilled />
           </div>
