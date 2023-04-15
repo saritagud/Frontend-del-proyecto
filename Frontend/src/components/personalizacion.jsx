@@ -11,9 +11,9 @@ function Personalizar (){
                 {" "}
                 <FaArrowLeft className="cursor-pointer text-4xl text-verdeOscuro ml-7 mt-7" />{" "}
             </a>
-            <h1 className='font-signikaNegative text-5xl text-center m-4'>¡Personaliza tu chatUVM!</h1>
+            <h1 className='font-signikaNegative text-5xl text-center m-4'>¡Personaliza tu MomoyBOT!</h1>
 
-            <p className='font-Urbanist text-center text-[20px] m-5'>Al proveer esta información, chatUVM te podrá proporcionar con mejores respuestas</p>
+            <p className='font-Urbanist text-center text-[20px] m-5'>Al proveer esta información, MomoyBOT te podrá proporcionar mejores respuestas</p>
 
             <form className="flex flex-col  bg-verdeClaro h-auto w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl">
             
@@ -21,10 +21,10 @@ function Personalizar (){
                 <label className={estiloLabel}>Carrera</label>
                 <select className='h-14 rounded-xl pl-3 font-Urbanist font-bold text-xl border-2 border-verdeOscuroFuerte'>
                 
-                    <option>Ingenieria De Computacion</option>
-                    <option>Ingenieria Industrial</option>
-                    <option>Administracion de empresas</option>
-                    <option>Contaduria</option>
+                    <option>Ingeniería en Computación</option>
+                    <option>Ingeniería Industrial</option>
+                    <option>Administración de empresas</option>
+                    <option>Contaduría</option>
                     <option>Derecho</option>
                 </select>
 

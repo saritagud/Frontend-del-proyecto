@@ -33,18 +33,17 @@ function Login() {
             fetch("http://localhost:3000/login", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify(datosUsuario),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                    document.cookie = `token=${data.token}`;
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+              })
+              .then((response) => response.json())
+              .then((data) => {
+                localStorage.setItem("token", data.token); // aqui almaceno el token en local storage
+              })
+              .catch((err) => {
+                console.log(err);
+              });
         }
     };
 
