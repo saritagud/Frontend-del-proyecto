@@ -1,24 +1,34 @@
-import React from 'react';
+import React from "react";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleHello = (message) => {
+        const messageLength = 10;
 
-        const messageLength = 10; 
-        if(message.length < messageLength){
-            alert('Ingrese su pregunta');
-            
-        }else{
-            let e={
-                pregunta: message
-            }
-                fetch('http://localhost:3000/respuesta', {
-                    method: 'Post',
+        if (message.length < messageLength) {
+            alert("Ingrese su pregunta");
+            return; // Tratando de que no imprima el mensaje...
+        } else {
+            const token = localStorage.getItem("token");
+
+            if (token) {
+                const e = {
+                    pregunta: message,
+                };
+
+                fetch("http://localhost:3000/respuesta", {
+                    method: "POST",
                     body: JSON.stringify(e),
-                    headers:{
-                        'Content-Type': 'application/json'
-                    }
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: "Bearer " + token,
+                    },
                 })
-                    .then(response => response.json())
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Error al enviar la solicitud");
+                        }
+                        return response.json();
+                    })
                     .then((data) => {
                         console.log(data.text);
                         const botMessage = createChatBotMessage(data.text);
@@ -26,18 +36,17 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                             ...prev,
                             messages: [...prev.messages, botMessage],
                         }));
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
                     });
+            } else {
+                alert("Error: Debe iniciar sesión para enviar su pregunta");
+                return; // Tratanndo de que no se imprima el mensaje...
+            }
         }
-      
-
-        // const botMessage = createChatBotMessage(message);
-
-        // setState((prev) => ({
-        //     ...prev,
-        //     messages: [...prev.messages, botMessage],
-        // }));
+        
     };
-
     return (
         <div>
             {React.Children.map(children, (child) => {
