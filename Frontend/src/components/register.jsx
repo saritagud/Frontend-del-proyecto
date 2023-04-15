@@ -7,8 +7,8 @@ function Registro() {
     const [correoElectronico, setCorreoElectronico] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmarPassword, setConfirmacionPassword] = useState("")
-
+    const [confirmarPassword, setConfirmacionPassword] = useState("");
+    const [file, setFile] = useState(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -58,7 +58,23 @@ function Registro() {
                         .catch((err) => {
                             console.log(err);
                         });
-            }
+
+                    
+                        //
+                        const formData = new FormData();
+                        formData.append("username", username);
+                        formData.append("image", file);
+
+                        fetch("http://localhost:3000/upload", {
+                            method: 'POST',
+                            body: formData,
+                        })
+                        .then((response) => {response.json()})
+                        .then(data => console.log(data))
+                        .catch((error) => console.error('Error',error))
+            } 
+
+            
     }          
     return (
         <div>
@@ -70,20 +86,26 @@ function Registro() {
                 <img className="w-44 " src="/src/assets/logoBot.png" />
                 <h1 className="font-signikaNegative text-5xl m-3 ">Regístrate</h1>
 
-                <form className="flex flex-col items-center bg-verdeClaro h-full w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl" onSubmit={handleSubmit}>
+                <form className="flex flex-col items-center bg-verdeClaro h-full w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl" method="post" encType="multipart/form-data" onSubmit={handleSubmit} >
+
                     <div className="w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
 
                     <label className={estiloLabel}>Correo Institucional</label>
                     <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
+
                     <label className={estiloLabel}>Nombre de Usuario</label>
                     <input className={estiloInput} type="text" value={username} onChange={(e) => setUsername(e.target.value.trim())} name="username"></input>
+
                     <label className={estiloLabel}>Contraseña</label>
                     <input className={estiloInput} type="password" value={password} onChange={(e) => setPassword(e.target.value.trim())} name="contrasena"></input>
+
                     <label className={estiloLabel}>Confirma tu contraseña </label>
                     <input className={estiloInput} type="password" value={confirmarPassword} onChange={(e) => setConfirmacionPassword(e.target.value.trim())} name="contrasenaConfirmacion"></input>
-                    <label className={estiloLabel}>Foto de perfil(Opcional) </label>
-                    <input className="w-56 text-lg font-Urbanist font-bold m-3 cursor-pointer " type="file"></input>
-                    <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold ">Registrar</button>
+
+                    <label className={estiloLabel} htmlFor="file">Foto de perfil(Opcional) </label>
+                    <input className="w-56 text-lg font-Urbanist font-bold m-3 cursor-pointer " type="file" id="imagen" onChange={(e) => {const selectedFile = e.target.files[0]; console.log(selectedFile); setFile(selectedFile)}}></input>
+
+                    <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold " type="submit">Registrar</button>
                 </form>
             </section>
         </div>
