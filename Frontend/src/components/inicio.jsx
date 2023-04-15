@@ -1,4 +1,4 @@
-import {FaCheckCircle, FaChalkboardTeacher, FaAngleRight, FaBook} from "react-icons/fa";
+import {FaCheckCircle, FaChalkboardTeacher, FaAngleRight, FaBook, FaClock} from "react-icons/fa";
 import Nav from "./Nav";
 import Carrusel from "./carrusel";
 import Footer from "./footer";
@@ -34,6 +34,11 @@ function LandingPage () {
                 <div className="flex font-Urbanist text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor">
                     <FaBook className="text-5xl w-64"/>
                     <p>¡Comodidad y eficiencia! MomoyBot te permite obtener respuestas en cualquier momento y desde cualquier lugar</p>
+                </div>
+
+                <div className="flex font-Urbanist text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor">
+                    <FaClock className="text-5xl w-64"/>
+                    <p>Disponibilidad 24/7:Nuestro MomoyBot esta disponible disponibles las 24 horas del día, los 7 días de la semana, para que puedas realizar tus consultas cuando desees!</p>
                 </div>
 
             </div>

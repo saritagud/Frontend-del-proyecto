@@ -6,7 +6,11 @@ body{
     height: 100%;
 }
 
-
+.react-chatbot-kit-chat-inner-container div img{
+    border-radius: 50px;
+    height: 47px;
+    width: 47px;
+} 
 
 .react-chatbot-kit-chat-header{
     font-size: 30px;
@@ -39,6 +43,7 @@ body{
     display: flex;
 }
 
+
 .react-chatbot-kit-chat-input-container{
     position: fixed;
     bottom: 0;
@@ -69,11 +74,6 @@ body{
 
 }
 
-.react-chatbot-kit-user-avatar-icon{
-    width: 30px;
-
-}
-
 .react-chatbot-kit-user-chat-message-container{
     margin: 20px;
     display: flex;
@@ -87,15 +87,7 @@ body{
     cursor: pointer;
 }
 
-.react-chatbot-kit-chat-bot-avatar-letter{
-    background-color: #89A64B;
-    padding: 10px;
-    border-radius: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 20px;
-    font-family: 'Signika Negative';
-}
+
 
 
 

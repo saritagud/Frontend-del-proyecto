@@ -10,12 +10,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         }else{
             let e={
                 pregunta: message
-              }
+            }
                 fetch('http://localhost:3000/respuesta', {
                     method: 'Post',
                     body: JSON.stringify(e),
                     headers:{
-                      'Content-Type': 'application/json'
+                        'Content-Type': 'application/json'
                     }
                 })
                     .then(response => response.json())
