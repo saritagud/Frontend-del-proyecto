@@ -10,6 +10,7 @@ function Registro() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmarPassword, setConfirmacionPassword] = useState("")
+    const [file, setFile] = useState(null);
 
 
     const handleSubmit = (event) => {
@@ -61,6 +62,18 @@ function Registro() {
                         .catch((err) => {
                             console.log(err);
                         });
+
+                        const formData = new FormData();
+                        formData.append("username", username);
+                        formData.append("image", file);
+
+                        fetch("http://localhost:3000/upload", {
+                            method: 'POST',
+                            body: formData,
+                        })
+                        .then((response) => {response.json()})
+                        .then(data => console.log(data))
+                        .catch((error) => console.error('Error',error))
             }
     }          
     return (
@@ -84,8 +97,8 @@ function Registro() {
                     <input className={estiloInput} type="password" value={password} onChange={(e) => setPassword(e.target.value.trim())} name="contrasena"></input>
                     <label className={estiloLabel}>Confirma tu contraseña </label>
                     <input className={estiloInput} type="password" value={confirmarPassword} onChange={(e) => setConfirmacionPassword(e.target.value.trim())} name="contrasenaConfirmacion"></input>
-                    <label className={estiloLabel}>Foto de perfil(Opcional) </label>
-                    <input className="w-56 text-lg font-Urbanist font-bold m-3 cursor-pointer " type="file"></input>
+                    <label className={estiloLabel} htmlFor="file">Foto de perfil(Opcional) </label>
+                    <input className="w-56 text-lg font-Urbanist font-bold m-3 cursor-pointer " type="file" id="file" onChange={(e) => {const selectedFile = e.target.files[0]; console.log(selectedFile); setFile(selectedFile)}}></input>
                     <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold ">Registrar</button>
                 </form>
             </section>
