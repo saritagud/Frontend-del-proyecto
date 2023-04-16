@@ -1,8 +1,7 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate();
@@ -36,25 +35,26 @@ function Login() {
             fetch("http://localhost:3000/login", {
                 method: "POST",
                 headers: {
-                  "Content-Type": "application/json",
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(datosUsuario),
-              })
-              .then((response) => response.json())
-              .then((data) => {
-                console.log(data)
-                localStorage.setItem("token", data.token); // aqui almaceno el token en local storage
-                navigate('/personalizacion');
-              })
-              .catch((err) => {
-                console.log(err);
-              });            
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.token) {
+                        localStorage.setItem("token", data.token); // aqui almaceno el token en local storage
+                        navigate("/personalizacion");
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
     };
 
     return (
         <div>
-            <i onClick={() => navigate('/')}>
+            <i onClick={() => navigate("/")}>
                 {" "}
                 <FaArrowLeft className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7" />{" "}
             </i>
