@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom"
 import Chatbot from "react-chatbot-kit";
 import './Chatbot/chat.css'
 import config from "./Chatbot/config";
@@ -7,7 +8,15 @@ import ActionProvider from "./Chatbot/ActionProvider";
 import Nav from "./Nav";
 
 
+
 function Chat() {
+  const navigate = useNavigate();
+  const existeToken = localStorage.getItem('token');
+
+  useEffect(() => {
+    if ( !existeToken ) navigate('/');
+  }, [])
+
   return (
     <div className="">
     
