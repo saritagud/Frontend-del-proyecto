@@ -1,25 +1,34 @@
+import { useEffect } from 'react'
 import Footer from './footer'
 import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 function Personalizar (){
-
+    const navigate = useNavigate();
+    const existeToken = localStorage.getItem('token');
     const estiloLabel = "font-Urbanist text-xl text-left w-full mt-8 font-bold";
-    const estiloSelect = "h-14 rounded-xl p-3 font-Urbanist font-bold text-xl border-2 border-verdeOscuroFuerte"
+    const estiloSelect = "h-14 rounded-xl p-3 font-Urbanist font-bold text-xl border-2 border-verdeOscuroFuerte";
+
+    useEffect(() => {
+        if ( !existeToken ) navigate('/');
+    }, [])
+    
+
     return(
         <div className='flex flex-col items-center'>
-        <a className='w-full text-left' href="/">
+            <i className='w-full text-left' onClick={() => navigate('/')}>
                 {" "}
                 <FaArrowLeft className="cursor-pointer text-4xl text-verdeOscuro ml-7 mt-7" />{" "}
-            </a>
+            </i>
             <h1 className='font-signikaNegative text-5xl text-center m-4'>¡Personaliza tu MomoyBOT!</h1>
 
             <p className='font-Urbanist text-center text-[20px] m-5'>Al proveer esta información, MomoyBOT te podrá proporcionar mejores respuestas</p>
 
-            <form className="flex flex-col  bg-verdeClaro h-auto w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl">
+            <form className="flex flex-col  bg-verdeClaro h-auto w-72 lg:w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl">
             
-            <div className=" rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
+            <div className="w-62 lg:w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
                 <label className={estiloLabel}>Carrera</label>
-                <select className='h-14 rounded-xl pl-3 font-Urbanist font-bold text-xl border-2 border-verdeOscuroFuerte'>
+                <select className='h-14 rounded-xl text-base pl-3 font-Urbanist font-bold lg:text-xl border-2 border-verdeOscuroFuerte'>
                 
                     <option>Ingeniería en Computación</option>
                     <option>Ingeniería Industrial</option>

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 function Nav() {
+  const navigate = useNavigate();
+  const existeToken = localStorage.getItem('token');
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false); 
 
@@ -47,25 +50,35 @@ function Nav() {
   return (
         <div className="">
             <header className="bg-white h-20 flex items-center justify-between px-5 w-full ">
-                <img className="w-16" src="/src/assets/robotBot.png" />
+                <img className="w-16 cursor-pointer" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
                 <nav>
                     <FaBars className="text-3xl h-full w-full cursor-pointer text-verdeManzana " onClick={() => setIsOpen(!isOpen)} />
 
                     {isOpen && (
-                        <ul className="origin-top-right absolute right-0 mt-5 w-full h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 text-right">
-                            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./chat">
+                        <ul className="origin-top-right absolute right-0 mt-5 w-full h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 text-right cursor-pointer">
+                            {
+                              existeToken &&
+                              <>
+                                <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
                                 <li>ChatUVM</li>
-                            </a>
-                            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./personalizacion">
-                                <li>Personalizacion</li>
-                            </a>
-                            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./login">
+                              </p>
+                              <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                                  <li>Personalizacion</li>
+                              </p>
+                              </>
+                            }
+                            {
+                              !existeToken &&
+                              <>
+                                <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
                                 <li>Iniciar Sesión</li>
-                            </a>
-                            <a className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist" href="./registro">
-                                <li>Registrarse</li>
-                            </a>
-                            <LogoutButton isLoading={isLoading} />
+                                </p>
+                                <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                                    <li>Registrarse</li>
+                                </p>
+                              </>
+                            }
+                            <LogoutButton isLoading={isLoading}/>
                         </ul>
                     )}
                 </nav>

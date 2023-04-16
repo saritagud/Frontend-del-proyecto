@@ -1,8 +1,11 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
+    const navigate = useNavigate();
     const estiloLabel = "font-Urbanist text-xl text-left w-full m-3 font-bold";
     const estiloInput = "border-2 border-verdeOscuroFuerte h-14 text-left w-full rounded-2xl p-3 font-Urbanist text-xl font-bold";
     const [correoElectronico, setCorreoElectronico] = useState("");
@@ -39,27 +42,29 @@ function Login() {
               })
               .then((response) => response.json())
               .then((data) => {
+                console.log(data)
                 localStorage.setItem("token", data.token); // aqui almaceno el token en local storage
+                navigate('/personalizacion');
               })
               .catch((err) => {
                 console.log(err);
-              });
+              });            
         }
     };
 
     return (
         <div>
-            <a href="/">
+            <i onClick={() => navigate('/')}>
                 {" "}
                 <FaArrowLeft className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7" />{" "}
-            </a>
+            </i>
 
             <section className="flex flex-col  items-center">
                 <img className="w-44 " src="/src/assets/logoBot.png" />
                 <h1 className="font-signikaNegative text-5xl m-5">Inicia Sesión </h1>
 
-                <form className="flex flex-col items-center bg-verdeClaro h-auto w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl" onSubmit={handleSubmit}>
-                    <div className="w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
+                <form className="flex flex-col items-center bg-verdeClaro h-auto w-72 lg:w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-16 shadow-2xl" onSubmit={handleSubmit}>
+                    <div className="w-72 lg:w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
                     <label className={estiloLabel}>Correo Electrónico </label>
                     <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
                     <label className={estiloLabel}>Contraseña</label>
