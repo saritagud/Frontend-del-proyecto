@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactHowler from 'react-howler';
+import sonidoMensaje from "../../assets/tono.mp3";
 
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
@@ -6,7 +8,7 @@ const MessageParser = ({ children, actions }) => {
     console.log(message)
     actions.handleHello(message)
   };
-
+  
   return (
     <div>
       {React.Children.map(children, (child) => {
@@ -15,6 +17,8 @@ const MessageParser = ({ children, actions }) => {
           actions: {},
         });
       })}
+      
+      <ReactHowler src={sonidoMensaje} /> 
     </div>
   );
 };
