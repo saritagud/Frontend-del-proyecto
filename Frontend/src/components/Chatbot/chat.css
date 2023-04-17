@@ -10,19 +10,18 @@ body{
     border-radius: 50px;
     height: 47px;
     width: 47px;
-} 
+}
 
 .react-chatbot-kit-chat-header{
     font-size: 30px;
     margin-top: 10px;
     text-align: center;
     font-family: 'Signika Negative';
-    
 }
 
 .react-chatbot-kit-chat-bot-message{
-    background-color: #D0E6B5;
-    border: 1px solid #A7A7A7;
+    background-color: var(--contrast-secundary-color);
+    border: 1px solid var(--neutral-color);
     border-radius: 0px 16px 16px 30px;
     height: max-content;
     width: 80%;
@@ -33,7 +32,7 @@ body{
 }
 
 .react-chatbot-kit-chat-input-container{
-    background-color: #89A64B;
+    background-color: var(--contrast-primary-color);
     padding: 20px;
     width: 100%;
 }
@@ -53,24 +52,24 @@ body{
 }
 .react-chatbot-kit-chat-input{
     border-radius: 10px;
-    border: 1px solid #A7A7A7;
+    border: 1px solid var(--neutral-color);
     height: 40px;
     width: 100%;
     padding: 10px;
 }
 
 .react-chatbot-kit-user-chat-message{
-        background-color: #D0E6B5;
-        border: 1px solid #A7A7A7;
-        border-radius: 16px 0px 30px 16px;
-        height: max-content;
-        width: max-content;
-        margin: 10px;
-        text-align: right;
-        padding: 10px;
-        font-family: 'Urbanist';
-        display: flex;
-        font-weight: bold;
+    background-color: var(--contrast-secundary-color);
+    border: 1px solid var(--neutral-color);
+    border-radius: 16px 0px 30px 16px;
+    height: max-content;
+    width: max-content;
+    margin: 10px;
+    text-align: right;
+    padding: 10px;
+    font-family: 'Urbanist';
+    display: flex;
+    font-weight: bold;
 
 }
 
@@ -86,8 +85,3 @@ body{
     margin-left: -30px;
     cursor: pointer;
 }
-
-
-
-
-

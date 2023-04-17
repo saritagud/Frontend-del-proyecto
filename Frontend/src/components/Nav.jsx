@@ -36,7 +36,7 @@ function Nav() {
       <>
         {localStorage.getItem("token") && (
           <button
-            className="bg-verdeManzana p-4 rounded-2xl font-Urbanist font-bold text-xl m-5 w-52 hover:bg-black text-white shadow-md"
+            className="bg-secundaryColor p-4 rounded-2xl font-Urbanist font-bold text-xl m-5 w-52 hover:bg-black text-white shadow-md"
             onClick={handleLogout}
             disabled={isLoading}
           >
@@ -49,20 +49,20 @@ function Nav() {
 
   return (
         <div className="">
-            <header className="bg-white h-20 flex items-center justify-between px-5 w-full ">
+            <header className="bg-bgColor h-20 flex items-center justify-between px-5 w-full ">
                 <img className="w-16 cursor-pointer" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
                 <nav>
-                    <FaBars className="text-3xl h-full w-full cursor-pointer text-verdeManzana " onClick={() => setIsOpen(!isOpen)} />
+                    <FaBars className="text-3xl h-full w-full cursor-pointer text-secundaryColor " onClick={() => setIsOpen(!isOpen)} />
 
                     {isOpen && (
-                        <ul className="origin-top-right absolute right-0 mt-5 w-full h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 text-right cursor-pointer">
+                        <ul className="origin-top-right absolute right-0 mt-5 w-full h-screen rounded-md shadow-lg bg-bgColor text-textColor ring-1 ring-black ring-opacity-5 text-right cursor-pointer">
                             {
                               existeToken &&
                               <>
-                                <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                                <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
                                 <li>ChatUVM</li>
                               </p>
-                              <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                              <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
                                   <li>Personalizacion</li>
                               </p>
                               </>
@@ -70,10 +70,10 @@ function Nav() {
                             {
                               !existeToken &&
                               <>
-                                <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                                <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
                                 <li>Iniciar Sesión</li>
                                 </p>
-                                <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                                <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
                                     <li>Registrarse</li>
                                 </p>
                               </>

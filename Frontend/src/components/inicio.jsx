@@ -5,7 +5,7 @@ import Footer from "./footer";
 
 function LandingPage () {
     return(
-        <div>
+        <div className="bg-bgColor">
         <Nav/>
             <section className="bg-principal p-3 bg-cover bg-fixed">
             <h1 className="text-white font-signikaNegative text-5xl flex pt-96 px-3">MomoyBot</h1>
