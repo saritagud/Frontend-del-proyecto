@@ -8,7 +8,7 @@ function LandingPage () {
         <div className="bg-bgColor">
         <Nav/>
             <section className="bg-principal p-3 bg-cover bg-fixed md:h-[950px]">
-            <h1 className="text-white font-signikaNegative text-5xl flex pt-96 px-3 md:text-7xl sm:pt-[550px]">MomoyBot</h1>
+            <h1 className="text-white font-signikaNegative text-5xl flex pt-96 px-3 md:text-7xl md:pt-[550px]">MomoyBot</h1>
             <p className="text-white font-Urbanist text-xl flex pt-5 px-3 md:text-3xl">El MomoyBot es una herramienta diseñada pensando en los estudiantes. Resuelve cualquier dudas en solo minutos! 
             Creado por los mejores estudiantes de nuestra universidad.</p>
             <a href="./chat"><button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 bg-secundaryColor p-3 w-64 flex justify-center rounded-3xl m-3 text-white font-Urbanist text-xl cursor-pointer md:text-3xl md:w-96 md:h-20 md:items-center">
@@ -22,20 +22,20 @@ function LandingPage () {
         
             <div className="flex flex-col items-center w-full mb-5">
         
-                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg  my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor sm:text-3xl md:p-7">
+                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg  my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor md:text-3xl md:p-7">
                     <FaCheckCircle className="hover:fill-[#fff] text-5xl lg:mr-10 mr-5 md:text-6xl"/>
                     <p className="w-10/12">¡Rapidez a la hora de obtener respuestas! Con nuestro MomoyBot solo estás a un clic de distancia para resolver tus dudas.</p>
                 </div>
-                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor sm:text-3xl md:p-7">
-                    <FaChalkboardTeacher className="hover:fill-[#fff] text-5xl lg:mr-10 mr-5 md:text-6xl"/>
+                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor md:text-3xl md:p-7">
+                    <FaChalkboardTeacher className="hover:fill-[#fff] text-5xl mr-5 md:text-6xl"/>
                     <p className="w-10/12">¿Tienes dudas con respecto a tu carrera? ¿Deseas conocer algo sobre la universidad? Entonces, ¿qué estás esperando para hacer tu pregunta a MomoyBot?</p>
                 </div>
-                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor sm:text-3xl md:p-7">
+                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor md:text-3xl md:p-7">
                     <FaBook className="hover:fill-[#fff] text-5xl mr-5 md:text-6xl"/>
                     <p className="w-10/12">¡Comodidad y eficiencia! MomoyBot te permite obtener respuestas en cualquier momento y desde cualquier lugar</p>
                 </div>
 
-                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor sm:text-3xl md:p-7">
+                <div className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-80 duration-300 flex justify-center font-Urbanist grid-cols-2 text-lg my-4 font-bold items-center rounded-2xl p-3 w-[100%] shadow-2xl bg-secundaryColor md:text-3xl md:p-7">
                     <FaClock className="hover:fill-[#fff] text-5xl lg:mr-10 mr-5 md:text-6xl"/>
                     <p className="w-10/12">Disponibilidad 24/7: Nuestro MomoyBot esta disponible disponibles las 24 horas del día, los 7 días de la semana, para que puedas realizar tus consultas cuando desees!</p>
                 </div>
@@ -44,7 +44,7 @@ function LandingPage () {
 
         </section>
         <div>
-            <p className="font-signikaNegative text-textColor text-center text-3xl p-7 sm:text-5xl">¡Tener respuestas a tus preguntas nunca fue tan fácil!</p>
+            <p className="font-signikaNegative text-textColor text-center text-3xl p-7 md:text-5xl">¡Tener respuestas a tus preguntas nunca fue tan fácil!</p>
             <Carrusel/>
         </div>
 
