@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Registro() {
     const navigate = useNavigate();
@@ -11,35 +12,46 @@ function Registro() {
     const [password, setPassword] = useState("");
     const [confirmarPassword, setConfirmacionPassword] = useState("")
     const [file, setFile] = useState(null);
-
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
 
         const regexLength = 5;
-            if(username.length < regexLength && password.length < regexLength && confirmarPassword.length < regexLength){
-                alert('Ingrese datos validos')
+            if(username.length < regexLength || password.length < regexLength || username.length < regexLength ||confirmarPassword.length < regexLength || correoElectronico.length < regexLength || password !== confirmarPassword){
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'error',
+                    title: 'Ingrese datos validos',
+                    showConfirmButton: false,
+                    timer: 4000,
+                }).then(()=>{
 
-                if (password !== confirmarPassword) {
-                    alert("La contraseña y la confirmación de la contraseña no coinciden.")
-                }
-                    const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
-                        if (!password || !regexPassword.test(password)) {
-                        alert("La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.");
-                        return;
-                    }
-                    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!correoElectronico || !regexEmail.test(correoElectronico)) {
-                        alert("Por favor ingresa un correo electrónico válido.");
-                        return;
-                    }
-            
-                    const regexUsername = /^[a-zA-Z0-6]+$/;
-                        if (!username || !regexUsername.test(username)) {
-                        alert("Por favor ingresa un nombre de usuario válido (sólo letras y números).");
-                        return;
-                    }
-                
+                }).then(()=>{
+                        const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+                            if (!password || !regexPassword.test(password)) {
+                                Swal.fire({
+                                    position: 'top-center',
+                                    icon: 'error',
+                                    title: 'La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.',
+                                    showConfirmButton: false,
+                                    timer: 4000,
+                                });
+                            return;
+                        }
+                    }).then(() => {
+                        const regexUsername = /^[a-zA-Z0-6]+$/;
+                            if (!username || !regexUsername.test(username)) {
+                                Swal.fire({
+                                    position: 'top-center',
+                                    icon: 'error',
+                                    title: 'Por favor ingresa un nombre de usuario válido (sólo letras y números).',
+                                    showConfirmButton: false,
+                                    timer: 4000,
+                                });
+                            return;
+                        }
+                    })   
+
                 } else {
                     const datosUsuario = {
                         correo: correoElectronico,
@@ -65,6 +77,7 @@ function Registro() {
                         });
 
                         const formData = new FormData();
+                        console.log(formData)
                         formData.append("username", username);
                         formData.append("image", file);
 
@@ -72,7 +85,7 @@ function Registro() {
                             method: 'POST',
                             body: formData,
                         })
-                        .then((response) => {response.json()})
+                        .then((response) => response.json())
                         .then(data => console.log(data))
                         .catch((error) => console.error('Error',error))
             }
