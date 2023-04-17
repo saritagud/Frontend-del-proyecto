@@ -56,8 +56,9 @@ function Registro() {
                     })
                         .then((response) => response.json())
                         .then((data) => {
-                            console.log(data);
-                            navigate('/login')
+                            console.log(data)
+                            localStorage.setItem("token", data.token); // aqui almaceno el token en local storage
+                            navigate('/personalizacion');
                         })
                         .catch((err) => {
                             console.log(err);
