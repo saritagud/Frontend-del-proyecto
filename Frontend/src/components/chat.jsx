@@ -23,6 +23,7 @@ function Chat() {
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
+        placeholderText='Escriba su mensaje aquí...'
       />
     </div>
   );

@@ -1,9 +1,10 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 
+const imageUrl = localStorage.getItem("image_url");
+
 const config = {
   botName: "MomoyBot",
   botAvatar: '/Frontend/src/assets/robotBot.png',
-  placeholderText: 'Escribe aquí tu mensaje...',
   headerTitle: 'Asistente virtual',
 
 
@@ -14,7 +15,7 @@ const config = {
    
    botAvatar: () => <img src="/src/assets/robotBot.png"/>,
 
-   userAvatar: () => <img src="https://a.pinatafarm.com/1600x900/42eabc1f72/capybara-328ef972dfbb299e413bc16ddaec747c-meme.jpeg"/>,
+   userAvatar: () => <img src={imageUrl}/>,
    
  },
 };
