@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 function Registro() {
     const navigate = useNavigate();
     const estiloLabel = "font-Urbanist text-lg text-left w-full mt-5 font-bold";
-    const estiloInput = "border-2 border-verdeOscuroFuerte h-12 text-left w-full rounded-2xl p-3 font-Urbanist font-xl font-bold";
+    const estiloInput = "border-2 border-compPrimaryColor h-12 text-left w-full rounded-2xl p-3 font-Urbanist font-xl font-bold";
     const [correoElectronico, setCorreoElectronico] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -33,13 +33,13 @@ function Registro() {
                         alert("Por favor ingresa un correo electrónico válido.");
                         return;
                     }
-            
+
                     const regexUsername = /^[a-zA-Z0-6]+$/;
                         if (!username || !regexUsername.test(username)) {
                         alert("Por favor ingresa un nombre de usuario válido (sólo letras y números).");
                         return;
                     }
-                
+
                 } else {
                     const datosUsuario = {
                         correo: correoElectronico,
@@ -76,19 +76,19 @@ function Registro() {
                         .then(data => console.log(data))
                         .catch((error) => console.error('Error',error))
             }
-    }          
+    }
     return (
-        <div>
+        <div className="bg-bgColor">
             <i onClick={() => navigate('/')}>
                 {" "}
-                <FaArrowLeft className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7" />{" "}
+                <FaArrowLeft className="cursor-pointer text-3xl text-contrastPrimaryColor w-7 h-7 relative top-7 left-7" />{" "}
             </i>
             <section className="flex flex-col items-center">
                 <img className="w-44 " src="/src/assets/logoBot.png" />
-                <h1 className="font-signikaNegative text-5xl m-3 ">Regístrate</h1>
+                <h1 className="font-signikaNegative text-5xl m-3 text-textColor">Regístrate</h1>
 
-                <form className="flex flex-col items-center bg-verdeClaro h-full w-72 lg:w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl" onSubmit={handleSubmit}>
-                    <div className="w-72 lg:w-80 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2"></div>
+                <form className="flex flex-col items-center bg-contrastSecundaryColor h-full w-72 lg:w-80 rounded-2xl border-2 border-solid border-neutralColor p-4 mb-14 shadow-2xl" onSubmit={handleSubmit}>
+                    <div className="w-72 lg:w-80 rounded-t-2xl h-6 bg-secundaryColor -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2"></div>
 
                     <label className={estiloLabel}>Correo Institucional</label>
                     <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
@@ -100,7 +100,7 @@ function Registro() {
                     <input className={estiloInput} type="password" value={confirmarPassword} onChange={(e) => setConfirmacionPassword(e.target.value.trim())} name="contrasenaConfirmacion"></input>
                     <label className={estiloLabel} htmlFor="file">Foto de perfil(Opcional) </label>
                     <input className="w-56 text-lg font-Urbanist font-bold m-3 cursor-pointer " type="file" id="file" onChange={(e) => {const selectedFile = e.target.files[0]; console.log(selectedFile); setFile(selectedFile)}}></input>
-                    <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold ">Registrar</button>
+                    <button className="bg-compPrimaryColor border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold ">Registrar</button>
                 </form>
             </section>
         </div>

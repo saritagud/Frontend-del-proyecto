@@ -12,14 +12,12 @@ import Nav from "./Nav";
 function Chat() {
   const navigate = useNavigate();
   const existeToken = localStorage.getItem('token');
-
   useEffect(() => {
     if ( !existeToken ) navigate('/');
   }, [])
 
   return (
-    <div className="">
-    
+    <div className="bg-bgColor">
     <Nav/>
       <Chatbot
         config={config}
