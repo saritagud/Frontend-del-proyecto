@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from 'sweetalert2'
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const handleHello = (message) => {
@@ -41,7 +42,14 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
                         console.error("Error:", error);
                     });
             } else {
-                alert("Error: Debe iniciar sesión para enviar su pregunta");
+                // alert("Error: Debe iniciar sesión para enviar su pregunta");
+            Swal.fire({
+            position: "top-center",
+            icon: "error",
+            title: "Debe iniciar sesion para enviar su pregunta",
+            showConfirmButton: false,
+            timer: 4000,
+          });
                 return; // Tratanndo de que no se imprima el mensaje...
             }
         }
