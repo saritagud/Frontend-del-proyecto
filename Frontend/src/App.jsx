@@ -7,8 +7,9 @@ import Personalizacion from "./components/personalizacion";
 
 
 function App() {
+  const theme = localStorage.getItem("theme");
   return (
-    <div className="min-h-screen" >
+    <div className={"min-h-screen bg-bgColor " + theme} >
       <Routes>
             <Route index element={<LandingPage />} />
             <Route path="/login" element={<Login />} />

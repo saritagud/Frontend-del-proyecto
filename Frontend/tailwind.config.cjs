@@ -12,7 +12,7 @@ module.exports = {
         verdeOscuroFuerte: "#0B751C",
         primaryColor: "var(--primary-color)",
         secundaryColor: "var(--secundary-color)",
-        NeutralColor: "var(--neutral-color)",
+        neutralColor: "var(--neutral-color)",
         contrastPrimaryColor: "var(--contrast-primary-color)",
         contrastSecundaryColor: "var(--contrast-secundary-color)",
         contrastNeutralColor: "var(--contrast-neutral-color)",
