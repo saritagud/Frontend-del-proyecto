@@ -38,19 +38,22 @@ function Registro() {
                         });
                     return;
                 }
-            }).then(() => {
-                const regexUsername = /^[a-zA-Z0-6]+$/;
-                    if (!username || !regexUsername.test(username)) {
-                        Swal.fire({
-                            position: 'top-center',
-                            icon: 'error',
-                            title: 'Por favor ingresa un nombre de usuario válido (sólo letras y números).',
-                            showConfirmButton: false,
-                            timer: 4000,
-                        });
-                    return;
-                }
-            })
+                    const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/;
+                        if (!password || !regexPassword.test(password)) {
+                        alert("La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.");
+                        return;
+                    }
+                    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!correoElectronico || !regexEmail.test(correoElectronico)) {
+                        alert("Por favor ingresa un correo electrónico válido.");
+                        return;
+                    }
+
+                    const regexUsername = /^[a-zA-Z0-6]+$/;
+                        if (!username || !regexUsername.test(username)) {
+                        alert("Por favor ingresa un nombre de usuario válido (sólo letras y números).");
+                        return;
+                    }
 
                 } else {
                     const datosUsuario = {
