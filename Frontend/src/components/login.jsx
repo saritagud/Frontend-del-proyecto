@@ -137,7 +137,7 @@ function Login() {
                         onChange={(e) => setPassword(e.target.value.trim())}
                         name="contrasena"
                     ></input>
-                    <button className="bg-compPrimaryColor border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold ">
+                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-compPrimaryColor border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold ">
                         Iniciar Sesión
                     </button>
 

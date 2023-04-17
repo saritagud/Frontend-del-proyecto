@@ -48,43 +48,43 @@ function Nav() {
   }
 
   return (
-        <div className="">
-            <header className="bg-bgColor h-20 flex items-center justify-between px-5 w-full ">
-                <img className="w-16 cursor-pointer" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
-                <nav>
-                    <FaBars className="text-3xl h-full w-full cursor-pointer text-secundaryColor " onClick={() => setIsOpen(!isOpen)} />
+    <div className="">
+        <header className="bg-white h-20 flex items-center justify-between px-5 w-full ">
+            <img className="w-16 cursor-pointer" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
+            <nav>
+                <FaBars className="text-3xl h-full w-full cursor-pointer text-verdeManzana " onClick={() => setIsOpen(!isOpen)} />
 
-                    {isOpen && (
-                        <ul className="origin-top-right absolute right-0 mt-5 w-full h-screen rounded-md shadow-lg bg-bgColor text-textColor ring-1 ring-black ring-opacity-5 text-right cursor-pointer">
-                            {
-                              existeToken &&
-                              <>
-                                <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
-                                <li>ChatUVM</li>
-                              </p>
-                              <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
-                                  <li>Personalizacion</li>
-                              </p>
-                              </>
-                            }
-                            {
-                              !existeToken &&
-                              <>
-                                <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
-                                <li>Iniciar Sesión</li>
-                                </p>
-                                <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-contrastSecundaryColor text-2xl font-Urbanist">
-                                    <li>Registrarse</li>
-                                </p>
-                              </>
-                            }
-                            <LogoutButton isLoading={isLoading}/>
-                        </ul>
-                    )}
-                </nav>
-            </header>
-        </div>
-    );
+                {isOpen && (
+                    <ul className="origin-top-right absolute right-0 mt-5 w-full h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 text-right cursor-pointer">
+                        { 
+                          existeToken && // Mostrar la pagina chat y personalizacion unicamente cuando el usuario este logueado
+                          <>
+                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <li>ChatUVM</li>
+                          </p>
+                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                              <li>Personalizacion</li>
+                          </p>
+                          </>
+                        }
+                        {
+                          !existeToken && // Mostrar la pagina login y registro unicamente cunado el usuario no tenga una cuenta o haya iniciado sesion
+                          <>
+                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <li>Iniciar Sesión</li>
+                            </p>
+                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                                <li>Registrarse</li>
+                            </p>
+                          </>
+                        }
+                        <LogoutButton isLoading={isLoading}/>
+                    </ul>
+                )}
+            </nav>
+        </header>
+    </div>
+);
 }
 
 export default Nav;

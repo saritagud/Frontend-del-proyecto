@@ -86,7 +86,7 @@ function Personalizar() {
                     <option value={3}>Sonido 3</option>
                 </select>
 
-                <button className="bg-secundaryColor border-2  rounded-2xl font-Urbanist text-white text-xl p-3 w-52 font-bold m-10">Guardar Cambios</button>
+                <button onClick={() => navigate('/chat')} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist text-white text-xl p-3 w-52 font-bold m-10">Guardar Cambios</button>
             </form>
 
             <Footer />
