@@ -41,15 +41,15 @@ function Carrusel() {
   };
 
   return (
-    <div className='max-w-[1400px] h-[600px] w-[90%] m-auto pb-20 px-4 relative group'>
+    <div className='max-w-[1400px] h-[600px] w-[90%] m-auto pb-20 px-4 relative group md:h-[800px]'>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
       ></div>
-      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactLeft onClick={imgAnterior} size={30} />
       </div>
-      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer '>
         <BsChevronCompactRight onClick={imgPosterior} size={30} />
       </div>
       <div className='flex top-4 justify-center py-2'>
@@ -57,7 +57,7 @@ function Carrusel() {
           <div
             key={slideIndex}
             onClick={() => imagen(slideIndex)}
-            className='text-2xl cursor-pointer text-textColor'
+            className='text-2xl cursor-pointer text-textColor md:text-5xl'
           >
             <RxDotFilled />
           </div>
