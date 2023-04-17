@@ -27,8 +27,9 @@ module.exports = {
       },
       backgroundImage: {
         principal: "url('./src/assets/img-principal.jpg')",
+        principalHorizontal: "url('./src/assets/photo-1587620962725-abab7fe55159.jpeg')",
       },
-
+      
       screens: {
         'sm': '640px',
         // => @media (min-width: 640px) { ... }

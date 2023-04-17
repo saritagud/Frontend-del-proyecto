@@ -49,8 +49,8 @@ function Nav() {
 
   return (
     <div className="">
-        <header className="bg-white h-20 flex items-center justify-between px-5 w-full md:h-24">
-            <img className="w-16 cursor-pointer sm:w-20" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
+        <header className="bg-white h-20 flex items-center justify-between px-5 w-full md:h-24 lg:h-14">
+            <img className="w-16 cursor-pointer sm:w-20 lg:w-14" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
             <nav>
                 <FaBars className="text-3xl h-full w-full cursor-pointer text-verdeManzana md:text-4xl" onClick={() => setIsOpen(!isOpen)} />
 
