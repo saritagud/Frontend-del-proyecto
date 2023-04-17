@@ -98,6 +98,28 @@ function Login() {
                         timer: 4000,
                     });
                 });
+
+                setTimeout(() => {
+                    const token = localStorage.getItem("token"); // obtener el token del localStorage
+                    console.log(token);
+    
+                    fetch("http://localhost:3000/getImageLogin", {
+                        method: "POST",
+                        body: JSON.stringify(datosUsuario),
+                        headers: new Headers({
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${token}`,
+                        }),
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data.body)
+                            localStorage.setItem("image_url", data.body);
+                        })
+                        .catch((error) => {
+                            console.error(error);
+                        });
+                }, 1000);
         }
     };
 
