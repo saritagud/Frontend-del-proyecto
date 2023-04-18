@@ -59,10 +59,10 @@ function Personalizar() {
             </i>
             <h1 className="font-signikaNegative text-textColor text-5xl text-center m-4 md:mt-6">¡Personaliza tu MomoyBOT!</h1>
 
-            <p className="font-Urbanist text-textColor text-center text-[20px] m-5 md:text-3xl">Al proveer esta información, MomoyBOT te podrá proporcionar mejores respuestas</p>
+            <p className="font-Urbanist text-textColor text-center text-[20px] font-bold m-5 md:text-3xl">Al proveer esta información, MomoyBOT te podrá proporcionar mejores respuestas</p>
 
             <form className="flex flex-col items-center bg-contrastSecundaryColor h-auto w-72 rounded-2xl border-2 border-solid border-neutralColor p-4 mb-16 shadow-2xl md:w-[70%] md:h-[650px]" onSubmit={handleSubmit}>
-                <div className="w-[540px] rounded-t-2xl h-6 bg-verdeOscuroFuerte -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:h-10"></div>
+                <div className="w-[540px] rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:h-10 lg:w-[720px]"></div>
                 <label className={estiloLabel}>Carrera</label>
                 <select className={estiloSelect}>
                     <option>Ingeniería en Computación</option>
@@ -87,6 +87,7 @@ function Personalizar() {
                 </select>
 
                 <button onClick={() => navigate('/chat')} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-verdeOscuroFuerte border-2 rounded-2xl font-Urbanist text-white text-xl p-3 w-52 font-bold mt-10 md:text-3xl md:w-96 md:h-20 ">Guardar Cambios</button>
+                <a/>
             </form>
 
             <Footer />

@@ -131,15 +131,15 @@ function Login() {
 
             <section className="flex flex-col items-center">
             <img className="w-44 md:w-52" src="/src/assets/logoBot.png" />
-                <h1 className="font-signikaNegative text-5xl m-5 md:text-6xl">
+                <h1 className="font-signikaNegative text-5xl m-5 md:text-6xl lg:text-7xl lg:mb-14">
                     Inicia Sesión{' '}
                 </h1>
 
                 <form
-                    className="flex flex-col items-center justify-center bg-verdeClaro h-full w-72 lg:w-80 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] md:h-[650px]"
+                    className="flex flex-col items-center justify-center bg-verdeClaro h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] md:h-[650px] lg:w-[70%] lg:h-[700px]"
                     onSubmit={handleSubmit}
                 >
-                    <div className="w-72 lg:w-80 rounded-t-2xl h-6 bg-secundaryColor -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:w-[540px] md:h-11 md:-mt-[100px]"></div>
+                    <div className="w-72 rounded-t-2xl h-6 bg-secundaryColor -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:w-[540px] md:h-11 md:-mt-[100px] lg:w-[715px] lg:-mt-[150px]"></div>
                     <label className={estiloLabel}>Correo Electrónico </label>
                     <input
                         className={estiloInput}
@@ -158,11 +158,11 @@ function Login() {
                         onChange={(e) => setPassword(e.target.value.trim())}
                         name="contrasena"
                     ></input>
-                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-compPrimaryColor border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold md:text-4xl md:h-20 md:w-60">
+                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-compPrimaryColor border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold md:text-4xl md:h-20 md:w-60 lg:mt-20 lg:w-96 lg:text-5xl">
                         Iniciar Sesión
                     </button>
 
-                    <p className="font-Urbanist md:text-3xl md:mt-7">
+                    <p className="font-Urbanist md:text-3xl md:mt-7 lg:text-4xl">
                         ¿No tienes una cuenta?{' '}
                         <a
                             className="font-bold hover:text-white"
