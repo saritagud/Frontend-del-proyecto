@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 
@@ -22,6 +22,13 @@ function Carrusel() {
     },
   ];
 
+  useEffect(() => {
+    slides.forEach(slide => {
+      const img = new Image();
+      img.src = slide.url;
+    });
+  }, [slides]);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const imgAnterior = () => {
@@ -41,7 +48,7 @@ function Carrusel() {
   };
 
   return (
-    <div className='max-w-[1400px] h-[600px] w-[90%] m-auto pb-20 px-4 relative group md:h-[800px] lg:w-[60%] lg:h-[700px]'>
+    <div className='max-w-[1400px] h-[600px] w-[90%] m-auto pb-20 px-4 relative group md:h-[800px] lg:w-[60%] lg:h-[700px] ur:w-[50%] ur:h-[900px]'>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className='w-full h-full rounded-2xl bg-center bg-cover duration-500'

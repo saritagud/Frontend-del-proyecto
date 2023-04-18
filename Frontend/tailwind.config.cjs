@@ -31,6 +31,9 @@ module.exports = {
       },
       
       screens: {
+
+        'p': '250px',
+        // => @media (min-width: 250px) { ... }
         'sm': '640px',
         // => @media (min-width: 640px) { ... }
   
@@ -45,6 +48,9 @@ module.exports = {
   
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
+
+        'ur': '1920px',
+        // => @media (min-width: 1920px) { ... }
       },
     },
   },
