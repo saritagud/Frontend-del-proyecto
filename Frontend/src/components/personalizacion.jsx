@@ -27,10 +27,14 @@ function Personalizar() {
             } else if (temaSeleccionado == "Tema Azul") {
                 localStorage.setItem('theme', "theme-blue");
             }
+
+
+
             const datosUsuario = {
                 estilosPref: temaSeleccionado,
                 sonidoPref: sonidoSeleccionado,
             }
+            
 
             fetch("http://localhost:3000/personalizacion", {
                 method: "PUT",
@@ -42,7 +46,7 @@ function Personalizar() {
               })
               .then(response => {
                 if (!response.ok) {
-                  throw new err("Error al actualizar los datos");
+                  throw new Error("Error al actualizar los datos");
                 }
                 console.log("Datos actualizados correctamente");
               })
@@ -86,7 +90,7 @@ function Personalizar() {
                     <option value={3}>Sonido 3</option>
                 </select>
 
-                <button onClick={() => navigate('/chat')} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-verdeOscuroFuerte border-2 rounded-2xl font-Urbanist text-white text-xl p-3 w-52 font-bold mt-10 md:text-3xl md:w-96 md:h-20 ">Guardar Cambios</button>
+                <button onClick={() => window.location.reload(false)} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-verdeOscuroFuerte border-2 rounded-2xl font-Urbanist text-white text-xl p-3 w-52 font-bold mt-10 md:text-3xl md:w-96 md:h-20 ">Guardar Cambios</button>
                 <a/>
             </form>
         </div>
