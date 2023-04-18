@@ -49,20 +49,20 @@ function Nav() {
 
   return (
     <div className="">
-        <header className="bg-white h-20 flex items-center justify-between px-5 w-full md:h-24 lg:h-20 border-verdeManzana border-[0.5px]">
-            <img className="w-16 cursor-pointer sm:w-20 lg:w-14" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
+        <header className="bg-white h-14 flex items-center justify-between px-5 w-full md:h-24 lg:h-20 border-verdeManzana border-[0.5px]">
+            <img className="w-14 cursor-pointer sm:w-20 lg:w-14" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
             <nav>
-                <FaBars className="text-3xl h-full w-full cursor-pointer text-verdeManzana md:text-4xl lg:hidden" onClick={() => setIsOpen(!isOpen)} />
+                <FaBars className="text-2xl h-full w-full cursor-pointer text-verdeManzana md:text-4xl lg:hidden" onClick={() => setIsOpen(!isOpen)} />
 
                 {isOpen && (
                     <ul className="origin-top-right absolute right-0 mt-5 w-full h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 text-right cursor-pointer ">
                         { 
                           existeToken && // Mostrar la pagina chat y personalizacion unicamente cuando el usuario este logueado
                           <>
-                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-verdeClaro rounded-2xl text-2xl font-Urbanist">
                             <li className="md:text-4xl md:mt-5">ChatUVM</li>
                           </p>
-                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-verdeClaro  rounded-2xl text-2xl font-Urbanist">
                               <li className="md:text-4xl md:mt-5">Personalizacion</li>
                           </p>
                           </>
@@ -70,10 +70,10 @@ function Nav() {
                         {
                           !existeToken && // Mostrar la pagina login y registro unicamente cunado el usuario no tenga una cuenta o haya iniciado sesion
                           <>
-                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-verdeClaro  rounded-2xl text-2xl font-Urbanist">
                             <li className="md:text-4xl md:mt-5">Iniciar Sesión</li>
                             </p>
-                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-verdeClaro  rounded-2xl text-2xl font-Urbanist">
                                 <li className="md:text-4xl md:mt-5">Registrarse</li>
                             </p>
                           </>
@@ -84,15 +84,15 @@ function Nav() {
 
                 
 
-                    <div className="sm:hidden md:hidden lg:block">
+                    <div className="p:hidden sm:hidden md:hidden lg:block">
                     <ul className="flex justify-between w-full">
                         { 
                           existeToken && // Mostrar la pagina chat y personalizacion unicamente cuando el usuario este logueado
                           <>
-                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-verdeClaro  rounded-2xl text-2xl font-Urbanist">
                             <li className="">ChatUVM</li>
                           </p>
-                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-verdeClaro  rounded-2xl text-2xl font-Urbanist">
                               <li className="">Personalizacion</li>
                           </p>
                           </>
@@ -100,10 +100,10 @@ function Nav() {
                         {
                           !existeToken && // Mostrar la pagina login y registro unicamente cunado el usuario no tenga una cuenta o haya iniciado sesion
                           <>
-                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-verdeClaro  rounded-2xl text-2xl font-Urbanist">
                             <li className="">Iniciar Sesión</li>
                             </p>
-                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-verdeClaro text-2xl font-Urbanist">
+                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-verdeClaro  rounded-2xl text-2xl font-Urbanist">
                                 <li className="">Registrarse</li>
                             </p>
                           </>

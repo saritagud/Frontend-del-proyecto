@@ -5,8 +5,8 @@ import Swal from "sweetalert2";
 
 function Registro() {
     const navigate = useNavigate();
-    const estiloLabel = "font-Urbanist text-lg text-left w-full mt-5 font-bold md:text-4xl md:mt-8";
-    const estiloInput = "border-2 border-verdeOscuroFuerte h-12 text-left w-full rounded-2xl p-3 font-Urbanist font-xl font-bold md:h-[70px] md:text-3xl md:mt-3";
+    const estiloLabel = "font-Urbanist text-lg text-left w-full mt-5 font-bold md:text-4xl md:mt-8 xl:text-3xl";
+    const estiloInput = "border-2 border-verdeOscuroFuerte h-12 text-left w-full rounded-2xl p-3 font-Urbanist font-xl font-bold md:h-[70px] md:text-3xl md:mt-3 xl:h-14";
     const [correoElectronico, setCorreoElectronico] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -108,9 +108,9 @@ function Registro() {
                 <img className="w-44 md:w-52" src="/src/assets/logoBot.png" />
                 <h1 className="font-signikaNegative text-5xl m-3 md:text-6xl">Regístrate</h1>
 
-                <form className="flex flex-col items-center bg-verdeClaro h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%]  lg:w-[70%] " onSubmit={handleSubmit}>
+                <form className="flex flex-col items-center bg-verdeClaro h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] lg:w-[70%] xl:w-[50%] xl:h-auto" onSubmit={handleSubmit}>
 
-                    <div className="w-72 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2 md:w-[570px] md:h-11 lg:w-[715px] "></div>
+                    <div className="w-72 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2 md:w-[570px] md:h-11 lg:w-[715px] xl:w-[690px]"></div>
 
                     <label className={estiloLabel}>Correo Institucional</label>
                     <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
@@ -122,7 +122,7 @@ function Registro() {
                     <input className={estiloInput} type="password" value={confirmarPassword} onChange={(e) => setConfirmacionPassword(e.target.value.trim())} name="contrasenaConfirmacion"></input>
                     <label className={estiloLabel} htmlFor="file">Foto de perfil(Opcional) </label>
                     <input className="w-full text-lg font-Urbanist font-bold m-3 cursor-pointer md:text-3xl" type="file" id="file" onChange={(e) => {const selectedFile = e.target.files[0]; console.log(selectedFile); setFile(selectedFile)}}></input>
-                    <button className="bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold md:text-4xl md:h-20 md:w-60">Registrar</button>
+                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold md:text-4xl md:h-20 md:w-60">Registrar</button>
 
                     <p className="font-Urbanist md:text-4xl md:mt-3 md:mb-7 md:text-center">
                         ¿Tienes una cuenta?{' '}
