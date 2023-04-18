@@ -2,12 +2,14 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
+const getImageUrl = () => localStorage.getItem("image_url");
 
 function Nav() {
   const navigate = useNavigate();
   const existeToken = localStorage.getItem('token');
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
+  const [mostrarBoton, setMostrarBoton] = useState(false); 
 
   function LogoutButton(props) { // pasando a isLoading como una prop
     const { isLoading } = props;
@@ -47,14 +49,19 @@ function Nav() {
     return (
       <>
         {localStorage.getItem("token") && (
-          <button
-          
-            className="bg-secundaryColor p-4 rounded-2xl font-Urbanist font-bold text-xl m-5 w-52 hover:bg-contrastSecundaryColor text-textColor shadow-md md:text-3xl md:w-64 lg:text-xl lg:h-10 lg:w-40 lg:m-2 lg:p-1 lg:rounded-xl ur:text-2xl ur:h-14  ur:w-52 ur:mt-8"
-            onClick={handleLogout}
-            disabled={isLoading}
+          <div className="perfil">
+          <img className="w-14 cursor-pointer sm:w-20 lg:w-14 ur:w-20" src={getImageUrl()}  onClick={() => setMostrarBoton(!mostrarBoton)}/>
+          {mostrarBoton && 
+          <span>
+            <button
+          className="bg-secundaryColor p-4 rounded-2xl font-Urbanist font-bold text-xl m-5 w-52 hover:bg-black text-white shadow-md md:text-3xl md:w-64 lg:text-xl lg:h-10 lg:w-40 lg:m-2 lg:p-1 lg:rounded-xl ur:text-2xl ur:h-14  ur:w-52 ur:mt-8"
+          onClick={handleLogout}
+          disabled={isLoading}
           >
-            {isLoading ? "Cerrando sesión..." : "Cerrar sesión"}
-          </button>
+          {isLoading ? "Cerrando sesión..." : "Cerrar sesión"}
+        </button>
+        </span>}
+        </div>
         )}
       </>
     );
