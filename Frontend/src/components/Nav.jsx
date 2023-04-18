@@ -63,31 +63,31 @@ function Nav() {
   return (
     <div className="">
         <header className="bg-bgColor h-14 flex items-center justify-between px-5 w-full md:h-24 lg:h-20 border-primaryColor border-[0.5px]">
-            <img className="w-14 cursor-pointer sm:w-20 lg:w-14 ur:w-20" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
+            <img className="w-14 cursor-pointer ur:w-20" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
             <nav>
-                <FaBars className="text-2xl h-full w-full cursor-pointer text-verdeManzana md:text-4xl lg:hidden" onClick={() => setIsOpen(!isOpen)} />
+                <FaBars className="text-2xl h-full w-full cursor-pointer text-secundaryColor md:text-4xl lg:hidden" onClick={() => setIsOpen(!isOpen)} />
 
                 {isOpen && (
-                    <ul className="origin-top-right absolute right-0 mt-3 w-full h-screen rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 text-right cursor-pointer ">
+                    <ul className="origin-top-right absolute right-0 mt-3 w-full h-screen rounded-md shadow-lg bg-bgColor ring-1 ring-black ring-opacity-5 text-right cursor-pointer ">
                         { 
                           existeToken && // Mostrar la pagina chat y personalizacion unicamente cuando el usuario este logueado
                           <>
-                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-compPrimaryColor rounded-2xl text-2xl font-Urbanist">
-                            <li className="md:text-4xl md:mt-5 text-textColor">ChatUVM</li>
+                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-compSecundaryColor text-2xl font-Urbanist">
+                            <li className="md:text-4xl md:mt-5 text-textColor cursor-pointer">ChatUVM</li>
                           </p>
-                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compPrimaryColor  rounded-2xl text-2xl font-Urbanist">
-                              <li className="md:text-4xl md:mt-5 text-textColor">Personalizacion</li>
+                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compSecundaryColor text-2xl font-Urbanist">
+                              <li className="md:text-4xl md:mt-5 text-textColor cursor-pointer">Personalizacion</li>
                           </p>
                           </>
                         }
                         {
                           !existeToken && // Mostrar la pagina login y registro unicamente cunado el usuario no tenga una cuenta o haya iniciado sesion
                           <>
-                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-compPrimaryColor  rounded-2xl text-2xl font-Urbanist">
+                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-compSecundaryColor text-2xl font-Urbanist font-bold">
                             <li className="md:text-4xl md:mt-5 text-textColor">Iniciar Sesión</li>
                             </p>
-                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-compPrimaryColor  rounded-2xl text-2xl font-Urbanist">
-                                <li className="md:text-4xl md:mt-5 text-textColor">Registrarse</li>
+                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-compSecundaryColor text-2xl font-Urbanist cursor-pointer font-bold">
+                                <li className="md:text-4xl md:mt-5 text-textColor cursor-pointer">Registrarse</li>
                             </p>
                           </>
                         }
@@ -102,22 +102,22 @@ function Nav() {
                         { 
                           existeToken && // Mostrar la pagina chat y personalizacion unicamente cuando el usuario este logueado
                           <>
-                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-compPrimaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
-                            <li className="text-textColor">MomoyBOT</li>
+                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
+                            <li className="text-textColor cursor-pointer font-bold">MomoyBOT</li>
                           </p>
-                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compPrimaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl  ur:mt-8">
-                              <li className="text-textColor">Personalizacion</li>
+                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl  ur:mt-8">
+                              <li className="text-textColor font-bold cursor-pointer">Personalizacion</li>
                           </p>
                           </>
                         }
                         {
                           !existeToken && // Mostrar la pagina login y registro unicamente cunado el usuario no tenga una cuenta o haya iniciado sesion
                           <>
-                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-compPrimaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
-                            <li className="text-textColor">Iniciar Sesión</li>
+                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
+                            <li className="text-textColor cursor-pointer font-bold">Iniciar Sesión</li>
                             </p>
-                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-compPrimaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
-                                <li className="text-textColor">Registrarse</li>
+                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
+                                <li className="text-textColor cursor-pointer font-bold">Registrarse</li>
                             </p>
                           </>
                         }

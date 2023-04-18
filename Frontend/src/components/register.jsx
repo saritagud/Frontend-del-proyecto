@@ -77,7 +77,7 @@ function Registro() {
                 .then((data) => {
                     console.log(data);
                     localStorage.setItem("token", data.token); // aqui almaceno el token en local storage
-                    navigate("/personalizacion");
+                    navigate("/chat");
                     if(data.error == false){
                         Swal.fire({
                             position: 'top-center',
@@ -111,15 +111,13 @@ function Registro() {
         <div>
             <i onClick={() => navigate('/')}>
                 {" "}
-                <FaArrowLeft className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7 md:text-6xl" />{" "}
+                <FaArrowLeft className="cursor-pointer text-3xl text-contrastPrimaryColor ml-7 mt-7 md:text-6xl" />{" "}
             </i>
             <section className="flex flex-col items-center">
                 <img className="w-44 md:w-52" src="/src/assets/logoBot.png" />
                 <h1 className="font-signikaNegative text-5xl m-3 md:text-6xl">Regístrate</h1>
 
-                <form className="flex flex-col items-center bg-verdeClaro h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] lg:w-[70%] xl:w-[50%] xl:h-auto ur:w-[40%]" onSubmit={handleSubmit}>
-
-                    <div className="w-72 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2 md:w-[570px] md:h-11 lg:w-[715px] xl:w-[690px] 2xl:w-[766px]"></div>
+                <form className="flex flex-col items-center bg-contrastSecundaryColor h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] lg:w-[70%] xl:w-[50%] xl:h-auto ur:w-[40%] border-t-[30px] border-t-secundaryColor" onSubmit={handleSubmit}>
 
                     <label className={estiloLabel}>Correo Institucional</label>
                     <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
@@ -131,9 +129,9 @@ function Registro() {
                     <input className={estiloInput} type="password" value={confirmarPassword} onChange={(e) => setConfirmacionPassword(e.target.value.trim())} name="contrasenaConfirmacion"></input>
                     <label className={estiloLabel} htmlFor="file">Foto de perfil(Opcional) </label>
                     <input className="w-full text-lg font-Urbanist font-bold m-3 cursor-pointer md:text-3xl" type="file" id="file" onChange={(e) => {const selectedFile = e.target.files[0]; console.log(selectedFile); setFile(selectedFile)}}></input>
-                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-verdeOscuroFuerte border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold md:text-4xl md:h-20 md:w-60">Registrar</button>
+                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-primaryColor border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold md:text-4xl md:h-20 md:w-60">Registrar</button>
 
-                    <p className="font-Urbanist md:text-4xl md:mt-3 md:mb-7 md:text-center">
+                    <p className="font-Urbanist md:text-4xl md:mt-3 md:mb-7 text-center">
                         ¿Tienes una cuenta?{' '}
                         <a
                             className="font-bold hover:text-white"

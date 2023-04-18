@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 function Login() {
     const navigate = useNavigate();
-    const estiloLabel = "font-Urbanist text-lg text-left w-full mt-5 font-bold md:text-4xl md:mt-8 xl:text-3xl ur:text-4xl";
+    const estiloLabel = "font-Urbanist text-xl text-left w-full mt-2 font-bold md:text-4xl xl:text-3xl ur:text-4xl";
     const estiloInput = "border-2 border-verdeOscuroFuerte h-12 text-left w-full rounded-2xl p-3 font-Urbanist font-xl font-bold md:h-[70px] md:text-3xl md:mt-3 xl:h-14 ur:h-20";
     const [correoElectronico, setCorreoElectronico] = useState('');
     const [password, setPassword] = useState('');
@@ -74,7 +74,7 @@ function Login() {
                         });
                         if (data.token) {
                             localStorage.setItem('token', data.token); // aqui almaceno el token en local storage
-                            navigate('/personalizacion');
+                            navigate('/chat');
                         }
                     } else {
                         Swal.fire({
@@ -126,7 +126,7 @@ function Login() {
         <div className="bg-bgColor">
             <i onClick={() => navigate('/')}>
                 {' '}
-                <FaArrowLeft className="cursor-pointer text-3xl text-verdeOscuro ml-7 mt-7 md:text-6xl" />{' '}
+                <FaArrowLeft className="cursor-pointer text-3xl text-contrastPrimaryColor ml-7 mt-7 md:text-6xl" />{' '}
             </i>
 
             <section className="flex flex-col items-center">
@@ -136,10 +136,9 @@ function Login() {
                 </h1>
 
                 <form
-                    className="flex flex-col items-center justify-center bg-verdeClaro h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] md:h-[650px] lg:w-[70%] lg:h-[700px] xl:w-[40%] xl:h-[90vh] ur:h-[80vh] ur:w-[35%]"
+                    className="flex flex-col items-center justify-center bg-contrastSecundaryColor h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] md:h-[650px] lg:w-[70%] lg:h-[700px] xl:w-[40%] xl:h-[70vh] ur:h-[80vh] ur:w-[35%] border-t-[30px] border-t-secundaryColor"
                     onSubmit={handleSubmit}
                 >
-                    <div className="w-72 rounded-t-2xl h-6 bg-secundaryColor -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:w-[540px] md:h-11 md:-mt-[100px] lg:w-[715px] lg:-mt-[150px] xl:-mt-[70px] xl:w-[550px] 2xl:w-[610px] ur:w-[670px] ur:-mt-[80px]"></div>
                     <label className={estiloLabel}>Correo Electrónico </label>
                     <input
                         className={estiloInput}
@@ -158,11 +157,11 @@ function Login() {
                         onChange={(e) => setPassword(e.target.value.trim())}
                         name="contrasena"
                     ></input>
-                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-compPrimaryColor border-2  rounded-2xl font-Urbanist mt-7 text-white text-xl p-3 w-52 font-bold md:text-4xl md:h-20 md:w-60 lg:mt-20 lg:w-96 lg:text-5xl xl:text-3xl xl:w-72 ur:text-4xl">
+                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-primaryColor border-2  rounded-2xl font-Urbanist mt-4 text-white text-xl p-3 w-52 font-bold md:text-4xl md:h-20 md:w-60 lg:mt-7 lg:w-96 lg:text-5xl xl:text-3xl xl:w-72 ur:text-4xl">
                         Iniciar Sesión
                     </button>
 
-                    <p className="font-Urbanist md:text-3xl md:mt-7 lg:text-4xl xl:text-3xl ur:text-4xl">
+                    <p className="font-Urbanist md:text-3xl md:mt-7 lg:text-4xl xl:text-3xl ur:text-4xl text-textColor">
                         ¿No tienes una cuenta?{' '}
                         <a
                             className="font-bold hover:text-white"
