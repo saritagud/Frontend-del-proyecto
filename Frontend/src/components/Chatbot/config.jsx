@@ -11,7 +11,7 @@ const config = {
   initialMessages: [createChatBotMessage("Hola, soy MomoyBot")],
 
   customComponents: {
-   header: () => <div style={{fontSize: '40px', textAlign: 'center', fontFamily: 'Signika Negative'}}>MomoyBot</div>,
+   header: () => <div style={{fontSize: '40px', textAlign: 'center', color:"#008800", fontFamily: 'Urbanist'}}>MomoyBot</div>,
    
    botAvatar: () => <img src="/src/assets/robotBot.png"/>,
 

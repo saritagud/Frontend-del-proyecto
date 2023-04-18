@@ -16,28 +16,30 @@
     --bg-color: #ffffff;
     --text-color: #1d1c24;
   }
+
+
   .theme-dark{
     --primary-color: #8FBF26;
     --secundary-color: #0B751C;
     --neutral-color: #acacb8;
-    --contrast-primary-color: #D0E6B5;
+    --contrast-primary-color: #7e7e7e;
     --contrast-secundary-color: #82bb74;
     --contrast-neutral-color: #f5f5f5;
     --comp-primary: #0B751C;
     --comp-secundary: #E2F2A7;
-    --bg-color: #323136;
+    --bg-color: #121212;
     --text-color: #f7f7f7;
   }
   .theme-blue{
-    --primary-color: #174c92;
-    --secundary-color: #507ebb;
+    --primary-color: #174c92; 
+    --secundary-color: #0066FF;
     --neutral-color: #A7A7A7;
-    --contrast-primary-color: #75b3f5;
-    --contrast-secundary-color: #84c0e6;
+    --contrast-primary-color: #479cf8 ;
+    --contrast-secundary-color: #409cff  ;
     --contrast-neutral-color: #0e0e0e;
-    --comp-primary: #0c4a63;
+    --comp-primary: #0a84ff;
     --comp-secundary: #5a7ad3;
-    --bg-color: #ffffff;
+    --bg-color: #F6F3ED  ;
     --text-color: #151418;
   }
 }
