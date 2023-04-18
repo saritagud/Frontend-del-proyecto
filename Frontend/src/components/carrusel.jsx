@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 
@@ -21,6 +21,13 @@ function Carrusel() {
       url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
     },
   ];
+
+  useEffect(() => {
+    slides.forEach(slide => {
+      const img = new Image();
+      img.src = slide.url;
+    });
+  }, [slides]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

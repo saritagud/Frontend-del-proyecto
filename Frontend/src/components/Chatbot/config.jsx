@@ -1,6 +1,6 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 
-const imageUrl = localStorage.getItem("image_url");
+const getImageUrl = () => localStorage.getItem("image_url");
 
 const config = {
   botName: "MomoyBot",
@@ -15,7 +15,7 @@ const config = {
    
    botAvatar: () => <img src="/src/assets/robotBot.png"/>,
 
-   userAvatar: () => <img src={imageUrl}/>,
+   userAvatar: () => <img src={getImageUrl()}/>,
    
  },
 };

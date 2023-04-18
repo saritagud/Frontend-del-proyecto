@@ -15,11 +15,10 @@ function Login() {
         event.preventDefault();
         const regexLength = 5;
         if (password.length < regexLength) {
-            // alert("Ingrese datos validos");
             Swal.fire({
                 position: 'top-center',
                 icon: 'error',
-                title: 'Ingrese datos validos',
+                title: 'Ingrese datos válidos',
                 showConfirmButton: false,
                 timer: 4000,
             });
@@ -31,7 +30,7 @@ function Login() {
                 Swal.fire({
                     position: 'top-center',
                     icon: 'error',
-                    title: 'La contraseña debe contener al menos 6 caracteres, una letra mayúscula, una letra minúscula y un número.',
+                    title: 'La contraseña debe contener al menos 6 caracteres, una letra mayúscula, una letra minúscula y un número',
                     showConfirmButton: false,
                     timer: 4000,
                 });
@@ -43,7 +42,7 @@ function Login() {
                 Swal.fire({
                     position: 'top-center',
                     icon: 'error',
-                    title: 'Por favor ingresa un correo electronico valido',
+                    title: 'Por favor ingresa un correo electronico válido',
                     showConfirmButton: false,
                     timer: 4000,
                 });
@@ -81,7 +80,7 @@ function Login() {
                         Swal.fire({
                             position: 'top-center',
                             icon: 'error',
-                            title: 'Usuario no esta registrado',
+                            title: 'El usuario no está registrado o la contraseña está errada',
                             showConfirmButton: false,
                             timer: 4000,
                         });
@@ -100,8 +99,7 @@ function Login() {
 
                 setTimeout(() => {
                     const token = localStorage.getItem("token"); // obtener el token del localStorage
-                    console.log(token);
-    
+                    if(token) {
                     fetch("http://localhost:3000/getImageLogin", {
                         method: "POST",
                         body: JSON.stringify(datosUsuario),
@@ -118,6 +116,8 @@ function Login() {
                         .catch((error) => {
                             console.error(error);
                         });
+                    } else 
+                    console.log('Token no creado')
                 }, 1000);
         }
     };
