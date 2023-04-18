@@ -62,7 +62,7 @@ function Personalizar() {
             <p className="font-Urbanist text-textColor text-center text-[20px] font-bold m-5 md:text-3xl">Al proveer esta información, MomoyBOT te podrá proporcionar mejores respuestas</p>
 
             <form className="flex flex-col items-center bg-contrastSecundaryColor h-auto w-72 rounded-2xl border-2 border-solid border-neutralColor p-4 mb-16 shadow-2xl md:w-[70%] md:h-[650px] xl:w-[50%]" onSubmit={handleSubmit}>
-                <div className="w-[286px] rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:h-10 lg:w-[720px] xl:w-[690px]"></div>
+                <div className="w-[286px] rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:h-10 lg:w-[720px] xl:w-[690px] 2xl:w-[766px]"></div>
                 <label className={estiloLabel}>Carrera</label>
                 <select className={estiloSelect}>
                     <option>Ingeniería en Computación</option>

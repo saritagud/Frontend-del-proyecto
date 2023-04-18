@@ -139,7 +139,7 @@ function Login() {
                     className="flex flex-col items-center justify-center bg-verdeClaro h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] md:h-[650px] lg:w-[70%] lg:h-[700px] xl:w-[40%] xl:h-[90vh]"
                     onSubmit={handleSubmit}
                 >
-                    <div className="w-72 rounded-t-2xl h-6 bg-secundaryColor -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:w-[540px] md:h-11 md:-mt-[100px] lg:w-[715px] lg:-mt-[150px] xl:-mt-[70px] xl:w-[550px]"></div>
+                    <div className="w-72 rounded-t-2xl h-6 bg-secundaryColor -m-5 mb-1 border-t-2 border-neutralColor border-l-2 border-r-2 md:w-[540px] md:h-11 md:-mt-[100px] lg:w-[715px] lg:-mt-[150px] xl:-mt-[70px] xl:w-[550px] 2xl:w-[610px]"></div>
                     <label className={estiloLabel}>Correo Electrónico </label>
                     <input
                         className={estiloInput}

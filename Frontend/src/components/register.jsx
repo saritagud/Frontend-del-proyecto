@@ -110,7 +110,7 @@ function Registro() {
 
                 <form className="flex flex-col items-center bg-verdeClaro h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] lg:w-[70%] xl:w-[50%] xl:h-auto" onSubmit={handleSubmit}>
 
-                    <div className="w-72 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2 md:w-[570px] md:h-11 lg:w-[715px] xl:w-[690px]"></div>
+                    <div className="w-72 rounded-t-2xl h-6 bg-verdeManzana -m-5 mb-1 border-t-2 border-grisClaro border-l-2 border-r-2 md:w-[570px] md:h-11 lg:w-[715px] xl:w-[690px] 2xl:w-[766px]"></div>
 
                     <label className={estiloLabel}>Correo Institucional</label>
                     <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
