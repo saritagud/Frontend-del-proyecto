@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 function Nav() {
   const navigate = useNavigate();
@@ -25,11 +26,22 @@ function Nav() {
         .then((data) => {
           localStorage.removeItem("token");
           setIsLoading(false);
+          navigate("/")
         })
         .catch((error) => {
           console.error(error);
           setIsLoading(false);
         });
+
+        if(existeToken) {
+          Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Has cerrado la sesión exitosamente',
+            showConfirmButton: false,
+            timer: 2000,
+        });
+        }
     };
 
     return (
