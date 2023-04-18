@@ -6,7 +6,13 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         const messageLength = 10;
 
         if (message.length < messageLength) {
-            alert("Ingrese su pregunta");
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'Por favor,Ingrese su pregunta',
+                showConfirmButton: false,
+                timer: 4000,
+            });
             return; // Tratando de que no imprima el mensaje...
         } else {
             const token = localStorage.getItem("token");

@@ -56,6 +56,8 @@ body{
     height: 40px;
     width: 100%;
     padding: 10px;
+    font-family: 'Urbanist';
+    font-weight: bold;
 }
 
 .react-chatbot-kit-user-chat-message{
@@ -121,6 +123,35 @@ body{
     border: 1px solid var(--neutral-color);
     height: 60px;
     font-size: 20px
+    
 }
 
+}
+
+@media (min-width: 1920px){
+    .react-chatbot-kit-chat-inner-container div img{
+        height: 80px;
+        width: 80px;
+    }
+    
+    .react-chatbot-kit-chat-bot-message{
+    
+        font-size: 40px;
+    }
+    
+    .react-chatbot-kit-user-chat-message{
+        font-size: 40px;
+    }
+    .react-chatbot-kit-chat-btn-send{
+        width: 40px;
+        margin-left: -55px;
+    }
+    
+    .react-chatbot-kit-chat-input{
+        border-radius: 10px;
+        border: 1px solid var(--neutral-color);
+        height: 80px;
+        font-size: 30px
+    }
+    
 }

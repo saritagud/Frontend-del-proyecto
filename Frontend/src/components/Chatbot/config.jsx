@@ -8,7 +8,7 @@ const config = {
   headerTitle: 'Asistente virtual',
 
 
-  initialMessages: [createChatBotMessage("Hola, soy MomoyBot")],
+  initialMessages: [createChatBotMessage("Hola, soy MomoyBOT. ¿Como puedo ayudarte?")],
 
   customComponents: {
    header: () => <div style={{fontSize: '40px', textAlign: 'center', fontFamily: 'Signika Negative', marginTop:'10px'}}>MomoyBot</div>,
