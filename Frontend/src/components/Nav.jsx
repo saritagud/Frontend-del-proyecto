@@ -49,7 +49,7 @@ function Nav() {
         {localStorage.getItem("token") && (
           <button
           
-            className="bg-secundaryColor p-4 rounded-2xl font-Urbanist font-bold text-xl m-5 w-52 hover:bg-contrastSecundaryColor text-textColor shadow-md md:text-3xl md:w-64 lg:text-xl lg:h-10 lg:w-40 lg:m-2 lg:p-1 lg:rounded-xl ur:text-2xl ur:h-14  ur:w-52 ur:mt-8"
+            className="bg-secundaryColor p-4 rounded-2xl font-Urbanist font-bold text-xl m-5 w-52 hover:bg-contrastSecundaryColor text-textColor shadow-md md:text-3xl md:w-64 lg:text-xl lg:h-10 lg:w-40 lg:m-2 lg:p-1 lg:rounded-xl 2xl:h-14 2xl:text-2xl 2xl:w-48 ur:text-3xl ur:h-14  ur:w-52 ur:m-4"
             onClick={handleLogout}
             disabled={isLoading}
           >
@@ -62,8 +62,8 @@ function Nav() {
 
   return (
     <div className="">
-        <header className="bg-bgColor h-14 flex items-center justify-between px-5 w-full md:h-24 lg:h-20 border-primaryColor border-[0.5px]">
-            <img className="w-14 cursor-pointer ur:w-20" src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
+        <header className="bg-bgColor h-14 flex items-center justify-between px-5 w-full md:h-24 lg:h-20 2xl:h-24 border-primaryColor border-[0.5px]">
+            <img className="w-14 cursor-pointer 2xl:w-20 " src="/src/assets/robotBot.png"  onClick={() => navigate('/')}/>
             <nav>
                 <FaBars className="text-2xl h-full w-full cursor-pointer text-secundaryColor md:text-4xl lg:hidden" onClick={() => setIsOpen(!isOpen)} />
 
@@ -75,8 +75,8 @@ function Nav() {
                             <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-compSecundaryColor text-2xl font-Urbanist">
                             <li className="md:text-4xl md:mt-5 text-textColor cursor-pointer">ChatUVM</li>
                           </p>
-                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compSecundaryColor text-2xl font-Urbanist">
-                              <li className="md:text-4xl md:mt-5 text-textColor cursor-pointer">Personalizacion</li>
+                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compSecundaryColor font-Urbanist">
+                              <li className="md:text-4xl md:mt-5 text-textColor cursor-pointer ">Personalizacion</li>
                           </p>
                           </>
                         }
@@ -98,25 +98,25 @@ function Nav() {
                 
 
                     <div className="p:hidden sm:hidden md:hidden lg:block">
-                    <ul className="flex justify-between w-full ur:h-32">
+                    <ul className="flex justify-between w-full ur:h-24 ">
                         { 
                           existeToken && // Mostrar la pagina chat y personalizacion unicamente cuando el usuario este logueado
                           <>
-                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
+                            <p onClick={() => navigate('/chat')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist 2xl:text-3xl ur:text-4xl ur:m-4">
                             <li className="text-textColor cursor-pointer font-bold">MomoyBOT</li>
                           </p>
-                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl  ur:mt-8">
-                              <li className="text-textColor font-bold cursor-pointer">Personalizacion</li>
+                          <p onClick={() => navigate('/personalizacion')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist 2xl:text-3xl  ur:text-4xl ur:m-4">
+                              <li className="text-textColor font-bold cursor-pointer">Personalización</li>
                           </p>
                           </>
                         }
                         {
                           !existeToken && // Mostrar la pagina login y registro unicamente cunado el usuario no tenga una cuenta o haya iniciado sesion
                           <>
-                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
+                            <p onClick={() => navigate('/login')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-4xl ur:m-4">
                             <li className="text-textColor cursor-pointer font-bold">Iniciar Sesión</li>
                             </p>
-                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-3xl ur:mt-8">
+                            <p onClick={() => navigate('/registro')} className="block px-4 py-3 hover:bg-compSecundaryColor  rounded-2xl text-2xl font-Urbanist ur:text-4xl ur:m-4">
                                 <li className="text-textColor cursor-pointer font-bold">Registrarse</li>
                             </p>
                           </>

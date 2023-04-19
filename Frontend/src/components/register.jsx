@@ -5,8 +5,8 @@ import Swal from "sweetalert2";
 
 function Registro() {
     const navigate = useNavigate();
-    const estiloLabel = "font-Urbanist text-lg text-left w-full mt-5 font-bold md:text-4xl md:mt-8 xl:text-3xl ur:text-4xl";
-    const estiloInput = "border-2 border-verdeOscuroFuerte h-12 text-left w-full rounded-2xl p-3 font-Urbanist font-xl font-bold md:h-[70px] md:text-3xl md:mt-3 xl:h-14 ur:h-20";
+    const estiloLabel = "font-Urbanist text-xl text-left w-full mt-2 font-bold md:text-4xl xl:text-3xl 2xl:text-4xl 2xl:mt-7 ur:text-5xl";
+    const estiloInput = "border-2 border-verdeOscuroFuerte h-12 text-left w-full rounded-2xl p-3 font-Urbanist font-xl font-bold md:h-[70px] md:text-3xl md:mt-3 xl:h-14 2xl:h-[70px] ur:h-20";
     const [correoElectronico, setCorreoElectronico] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -114,10 +114,10 @@ function Registro() {
                 <FaArrowLeft className="cursor-pointer text-3xl text-contrastPrimaryColor ml-7 mt-7 md:text-6xl" />{" "}
             </i>
             <section className="flex flex-col items-center">
-                <img className="w-44 md:w-52" src="/src/assets/logoBot.png" />
-                <h1 className="font-signikaNegative text-5xl m-3 md:text-6xl">Regístrate</h1>
+                <img className="w-44 md:w-52 ur:w-72" src="/src/assets/logoBot.png" />
+                <h1 className="font-signikaNegative text-5xl m-3 md:text-6xl ur:text-8xl ur:mb-14">Regístrate</h1>
 
-                <form className="flex flex-col items-center bg-contrastSecundaryColor h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 mb-14 shadow-2xl md:w-[70%] lg:w-[70%] xl:w-[50%] xl:h-auto ur:w-[40%] border-t-[30px] border-t-secundaryColor" onSubmit={handleSubmit}>
+                <form className="flex flex-col items-center bg-contrastSecundaryColor h-full w-72 rounded-2xl border-2 border-solid border-grisClaro p-4 sm:w-[70%] mb-14 shadow-2xl md:w-[70%] lg:w-[70%] xl:w-[50%] xl:h-auto ur:w-[40%] ur:h-[120vh] border-t-[30px] border-t-secundaryColor" onSubmit={handleSubmit}>
 
                     <label className={estiloLabel}>Correo Institucional</label>
                     <input className={estiloInput} type="email" value={correoElectronico} onChange={(e) => setCorreoElectronico(e.target.value.trim())} name="correoElectronico"></input>
@@ -128,10 +128,10 @@ function Registro() {
                     <label className={estiloLabel}>Confirma tu contraseña </label>
                     <input className={estiloInput} type="password" value={confirmarPassword} onChange={(e) => setConfirmacionPassword(e.target.value.trim())} name="contrasenaConfirmacion"></input>
                     <label className={estiloLabel} htmlFor="file">Foto de perfil(Opcional) </label>
-                    <input className="w-full text-lg font-Urbanist font-bold m-3 cursor-pointer md:text-3xl" type="file" id="file" onChange={(e) => {const selectedFile = e.target.files[0]; console.log(selectedFile); setFile(selectedFile)}}></input>
-                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-primaryColor border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold md:text-4xl md:h-20 md:w-60">Registrar</button>
+                    <input className="w-full text-lg font-Urbanist font-bold m-3 cursor-pointer md:text-3xl ur:text-4xl" type="file" id="file" onChange={(e) => {const selectedFile = e.target.files[0]; console.log(selectedFile); setFile(selectedFile)}}></input>
+                    <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-primaryColor border-2  rounded-2xl font-Urbanist m-5 text-white text-xl p-3 w-56 font-bold md:text-4xl md:h-20 md:w-60 ur:text-5xl ur:w-96 ur:h-24 ur:mt-14">Registrar</button>
 
-                    <p className="font-Urbanist md:text-4xl md:mt-3 md:mb-7 text-center">
+                    <p className="font-Urbanist md:text-4xl md:mt-3 md:mb-7 text-center ur:text-[45px] ur:mt-10">
                         ¿Tienes una cuenta?{' '}
                         <a
                             className="font-bold hover:text-white"
