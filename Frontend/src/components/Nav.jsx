@@ -25,6 +25,7 @@ function Nav() {
         .then((response) => response.json())
         .then((data) => {
           localStorage.removeItem("token");
+          localStorage.removeItem("image_url");
           setIsLoading(false);
           navigate("/")
         })
