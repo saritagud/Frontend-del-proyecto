@@ -96,29 +96,21 @@ function Login() {
                         timer: 4000,
                     });
                 });
-
-                setTimeout(() => {
-                    const token = localStorage.getItem("token"); // obtener el token del localStorage
-                    if(token) {
-                    fetch("http://localhost:3000/getImageLogin", {
-                        method: "POST",
-                        body: JSON.stringify(datosUsuario),
-                        headers: new Headers({
-                            "Content-Type": "application/json",
-                            Authorization: `Bearer ${token}`,
-                        }),
+                fetch("http://localhost:3000/getImage", {
+                    method: "POST",
+                    body: JSON.stringify(datosUsuario),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data.image.url)
+                    localStorage.setItem("image_url", data.image.url);
                     })
-                        .then((response) => response.json())
-                        .then((data) => {
-                            console.log(data.body)
-                            localStorage.setItem("image_url", data.body);
-                        })
-                        .catch((error) => {
-                            console.error(error);
-                        });
-                    } else 
-                    console.log('Token no creado')
-                }, 1000);
+                    .catch((error) => {
+                        console.error(error);
+                    });
         }
     };
 
